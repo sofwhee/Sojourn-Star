@@ -1,0 +1,7 @@
+<h1>Pages</h1>
+
+<ul>
+  <% @pages.each |page| do %>
+    <li><%= link_to page.page_number page %></li>
+  <% end %>
+</ul>
