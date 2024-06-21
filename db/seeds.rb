@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-admin = Admin.where(email: "sofiamsola@outlook.com").find_or_initialize
+admin = Admin.where(email: "sofiamsola@outlook.com").first_or_initialize
 admin.update!(
-  password: "password"
+  password: "password",
   password_confirmation: "password"
 )
