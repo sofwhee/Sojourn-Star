@@ -1,5 +1,13 @@
 <%= form_with model: page do |form| %>
   <div>
+    <%= form.label :image %><br>
+    <%= form.text_area :image %><br>
+    <% page.errors.full_messages_for(:image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
     <% page.errors.full_messages_for(:title).each do |message| %>
@@ -8,14 +16,12 @@
   </div>
 
   <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% page.errors.full_messages_for(:body).each do |message| %>
+    <%= form.label :page_number %><br>
+    <%= form.text_area :page_number %><br>
+    <% page.errors.full_messages_for(:page_number).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-
-  <%= form.hidden_field :user_id, value: current_user.id %>  
 
   <div>
     <%= form.submit %>
