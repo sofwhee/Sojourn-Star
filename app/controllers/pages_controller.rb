@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  has_one_attached :cover_image
+
   before_action :require_login, except: [:index, :show]
 
   def index
@@ -46,7 +48,7 @@ class PagesController < ApplicationController
   
   private
   def page_params
-    params.require(:page).permit(:image, :chapter, :page_number)
+    params.require(:page).permit(:cover_image, :chapter, :page_number)
   end
 
   def require_login

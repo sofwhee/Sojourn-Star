@@ -1,8 +1,8 @@
 <%= form_with model: page do |form| %>
   <div>
-    <%= form.label :image %><br>
-    <%= form.text_area :image %><br>
-    <% page.errors.full_messages_for(:image).each do |message| %>
+    <%= form.label :cover_image %><br>
+    <%= form.file_field :cover_image %><br>
+    <% page.errors.full_messages_for(:cover_image).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
