@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  has_one_attached :cover_image
+  # has_one_attached :cover_image
 
   before_action :require_login, except: [:index, :show]
 
