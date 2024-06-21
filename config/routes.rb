@@ -10,11 +10,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  unauthenticated do
-    root "home#index"
-  end
-
-  authenticated :admin do
-    root "sessions#new", as: :authenticated_root
-  end
+  root "home#index"
 end

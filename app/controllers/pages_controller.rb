@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :require_login, except: [:index, :show]
 
   def index
     @pages = Page.all
@@ -46,6 +46,12 @@ class PagesController < ApplicationController
   
   private
   def page_params
-    permit.require(:page).permit(:image, :chapter, :page_number)
+    params.require(:page).permit(:image, :chapter, :page_number)
+  end
+
+  def require_login
+    unless admin_signed_in?
+      raise ApplicationController::NotAuthorized
+    end
   end
 end
