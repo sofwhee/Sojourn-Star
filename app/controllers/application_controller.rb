@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   # ...or if you really want it to be ActionController
   # NotAuthorized = Class.new(ActionController::RoutingError)
 
-  rescue_from ActiveRecord::RecordNotFound do |exception|
-    render_error_page(status: 404, text: 'Not found')
-  end
+  # rescue_from ActiveRecord::RecordNotFound do |exception|
+  #   render_error_page(status: 404, text: 'Not found')
+  # end
 
-  rescue_from ApplicationController::NotAuthorized do |exception|
-    render_error_page(status: 403, text: 'Forbidden')
-  end
+  # rescue_from ApplicationController::NotAuthorized do |exception|
+  #   render_error_page(status: 403, text: 'Forbidden')
+  # end
 
   private
 

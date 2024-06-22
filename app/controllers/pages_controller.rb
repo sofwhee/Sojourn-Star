@@ -1,14 +1,13 @@
 class PagesController < ApplicationController
   # has_one_attached :cover_image
-
   before_action :require_login, except: [:index, :show]
+  before_action :set_page, except: [:index, :new, :create]
 
   def index
-    @pages = Page.all
+    @pages = admin_signed_in? ? Page.sorted : Page.published.sorted
   end
 
   def show
-    @page = Page.find(params[:id])
   end
 
   def new
@@ -48,12 +47,22 @@ class PagesController < ApplicationController
   
   private
   def page_params
-    params.require(:page).permit(:cover_image, :chapter, :page_number)
+    params.require(:page).permit(:cover_image, :chapter, :page_number, :published_at)
   end
 
   def require_login
     unless admin_signed_in?
-      raise ApplicationController::NotAuthorized
+      redirect_to root_path
     end
+  end
+
+  def set_page
+    if admin_signed_in?
+      @page = Page.find(params[:id])
+    else
+      @page = Page.published.find(params[:id])
+    end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
   end
 end

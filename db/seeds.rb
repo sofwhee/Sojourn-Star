@@ -9,7 +9,7 @@
 #   end
 
 admin = Admin.where(email: "sofiamsola@outlook.com").first_or_initialize
-admin.update!(
-  password: "password",
-  password_confirmation: "password"
-)
+# admin.update!(
+#   password: "password",
+#   password_confirmation: "password"
+# )

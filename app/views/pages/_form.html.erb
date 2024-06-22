@@ -23,6 +23,14 @@
     <% end %>
   </div>
 
+    <div>
+    <%= form.label :published_at %><br>
+    <%= form.datetime_select :published_at, include_blank: true %><br>
+    <% page.errors.full_messages_for(:published_at).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
