@@ -3,7 +3,7 @@
   <% @pages.each do |page| %>
 
     <% if page.invalid? %>
-      <p>invalid page!</p>
+      <%= link_to "Invalid page?", page.edit %>
       <% next %>
     <%end %>
 
