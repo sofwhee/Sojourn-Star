@@ -1,15 +1,28 @@
-<h1>Pages</h1>
 
-<% @pages.each do |page| %>
-  <% if page.draft? %>
-    <h1>Draft</h1>
-  <% end %>
-  <% if page.scheduled? %>
-    <p>scheduled</p>
-  <% end %>
-  <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
-  <div>Chapter <%= page.chapter %></div>
-  <div><%= link_to page.page_number, page %></div>
-<% end %>
+<% if admin_signed_in? %>
+  <% @pages.each do |page| %>
 
-<%= link_to "New page", new_page_path %>
+    <% if page.draft? %>
+      <h1>Draft</h1>
+    <% end %>
+
+    <% if page.scheduled? %>
+      <p>scheduled</p>
+    <% end %>
+
+    <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
+    <div>Chapter <%= page.chapter %></div>
+    <div><%= link_to page.page_number, page %></div>
+
+    <%= link_to "New page", new_page_path %>
+
+  <% end %>
+<% else %>
+  <% @pages.each do |page| %>
+
+    <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
+    <div>Chapter <%= page.chapter %></div>
+    <div><%= link_to page.page_number, page %></div>
+    
+  <% end %>
+<% end%>
