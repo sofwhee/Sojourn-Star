@@ -1,9 +1,9 @@
 
 <% if admin_signed_in? %>
   <% @pages.each do |page| %>
-  
+
     <% if page.invalid? %>
-      <% page.destroy %>
+      <p>invalid page!</p>
       <% next %>
     <%end %>
 
@@ -24,6 +24,10 @@
   <% end %>
 <% else %>
   <% @pages.each do |page| %>
+
+    <% if page.invalid? %>
+      <% next %>
+    <%end %>
 
     <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
     <div>Chapter <%= page.chapter %></div>
