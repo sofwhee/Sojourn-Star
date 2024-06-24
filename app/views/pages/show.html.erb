@@ -1,3 +1,8 @@
+<% if @page.page_image.attached? %>
+  <%= image_tag(url_for(@page.page_image)) %>
+  <%# <%= image_tag(@page.page_image.representation(resize_to_limit: [100, 100])) %>
+<% end %>
+
 <h1><%= @page.chapter %></h1>
 
 <p><%= @page.page_number %></p>
@@ -9,3 +14,5 @@
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
+
+<p><%@page.page_image%></p>

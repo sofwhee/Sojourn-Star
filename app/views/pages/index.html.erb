@@ -2,11 +2,13 @@
 
 <% @pages.each do |page| %>
   <% if page.draft? %>
-    <p>Draft</p>
+    <h1>Draft</h1>
   <% end %>
   <% if page.scheduled? %>
     <p>scheduled</p>
   <% end %>
+  <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
+  <div>Chapter <%= page.chapter %></div>
   <div><%= link_to page.page_number, page %></div>
 <% end %>
 

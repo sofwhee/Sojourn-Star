@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  # has_one_attached :cover_image
   before_action :require_login, except: [:index, :show]
   before_action :set_page, except: [:index, :new, :create]
 
@@ -47,7 +46,7 @@ class PagesController < ApplicationController
   
   private
   def page_params
-    params.require(:page).permit(:cover_image, :chapter, :page_number, :published_at)
+    params.require(:page).permit(:cover_image, :chapter, :page_number, :published_at, :page_image)
   end
 
   def require_login

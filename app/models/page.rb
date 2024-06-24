@@ -1,4 +1,6 @@
 class Page < ApplicationRecord
+  has_one_attached :page_image
+
   validates :chapter, presence: true
   validates :page_number, presence: true, uniqueness: true
 
