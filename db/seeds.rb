@@ -8,8 +8,4 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-admin = Admin.where(email: "sofiamsola@outlook.com").first_or_initialize
-# admin.update!(
-#   password: "password",
-#   password_confirmation: "password"
-# )
+admin = Admin.where(email: "sofiamsola@outlook.com").first_or_initialize(:password => 'password', :password_confirmation => 'password')
