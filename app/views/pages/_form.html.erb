@@ -24,18 +24,15 @@
   </div>
 
   <div>
-    <%= form.submit "Draft", :published_at => Time.new(0) %>
+    <%= form.submit "Draft" %>
   </div>
   
   <div>
-    <%= form.submit "Publish", :published_at => Time.current %>
+    <%= form.submit "Publish" %>
   </div>
 
   <div>
-    <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %><br>
-    <% page.errors.full_messages_for(:published_at).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+    <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %>
   </div>
 
   <div>

@@ -1,11 +1,29 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  chapter: 1
-  page: 1
-  image: MyString
+# one:
+#   chapter: 1
+#   page: 1
+#   image: MyString
 
-two:
+# two:
+#   chapter: 1
+#   page: 1
+#   image: MyString
+
+draft:
   chapter: 1
-  page: 1
-  image: MyString
+  page_number: 1
+  published_at: null
+  # page_image: none
+
+published:
+  chapter: 1
+  page_number: 2
+  published_at: <%= 1.year.ago %>
+  # page_image: none
+
+scheduled:
+  chapter: 1
+  page_number: 3
+  published_at: <%= 1.year.from_now %>
+  # page_image: none

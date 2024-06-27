@@ -14,8 +14,15 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.new(page_params)
 
+    if params[:commit] == "Draft"
+      page_params[:published_at] = nil
+    elsif params[:commit] == "Publish"
+      page_params[:published_at] = lambda { Time.current }
+    end
+
+    @page = Page.new(page_params)
+    
     if @page.save
       redirect_to @page
     else
