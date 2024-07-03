@@ -19,9 +19,9 @@
     <div>Chapter <%= page.chapter %></div>
     <div><%= link_to page.page_number, page %></div>
 
-    <%= link_to "New page", new_page_path %>
-
   <% end %>
+  
+  <%= link_to "New page", new_page_path %>
 <% else %>
   <% @pages.each do |page| %>
 
