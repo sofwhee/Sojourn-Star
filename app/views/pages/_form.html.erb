@@ -23,19 +23,15 @@
     <% end %>
   </div>
 
-  <div>
+  <div> 
     <%= form.submit "Draft" %>
-  </div>
-  
-  <div>
-    <%= form.submit "Publish" %>
   </div>
 
   <div>
     <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %>
   </div>
-
+    
   <div>
-    <%= form.submit "Schedule" %>
+    <%= form.submit "Publish" %>
   </div>
 <% end %>

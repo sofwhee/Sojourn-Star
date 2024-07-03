@@ -14,12 +14,10 @@ class PagesController < ApplicationController
   end
 
   def create
-    unless params[:commit] == "Scheduled"
+    if params[:commit] == "Draft"
       params[:page].delete_if{ |key, value| key.match(/^published_at/) }
+      params[:page][:published_at] == nil
     end
-
-    params[:page][:published_at] = nil if params[:commit] == "Draft"
-    params[:page][:published_at] = lambda { Time.current } if params[:commit] == "Publish"
 
     @page = Page.new(page_params)
     
