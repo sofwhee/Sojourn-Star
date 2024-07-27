@@ -36,6 +36,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
 
     if @page.update(page_params)
+      bump_all_pages(@page.id, @page.page_number)
       redirect_to @page
     else  
       render :edit, status: :unprocessable_entity
@@ -66,7 +67,16 @@ class PagesController < ApplicationController
     else
       @page = Page.published.find(params[:id])
     end
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_path
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
   end
+
+  # def bump_all_pages(page_id, page_num)
+  #   if Page.where(page_number: page_num).exists?
+  #     Page.where(page_number: page_num..).find_each do |cur_page|
+  #       cur_page.page_number += 1 unless cur_page.id == page_id
+  #     end
+  #   end
+  # end
+
 end

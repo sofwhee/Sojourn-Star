@@ -1,7 +1,33 @@
-<% if admin_signed_in? %>
-  <%= link_to 'logout', destroy_admin_session_path, data: { turbo_method: :delete } %>
-<% else %>
-  <%= link_to 'login', new_admin_session_path %>
-<% end %>
+<div id="fullwrap">
 
-<%= link_to 'archive', pages_path %>
+<a id="comictitle" href=<%= "home#index" %>>Sojourn Star</a>
+
+<div id="cpage">
+  <% @page = Page.last %>
+  <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "comic_image") %>
+</div>
+
+<div id="comicnavigation">
+  <a class="cn-first">first</a>
+  <a class="cn-prev">prev</a>
+  <a class="cn-pageinfo"><%= @page.page_number.to_s%></a>
+  <a class="cn-next">next</a>
+  <a class="cn-last">last</a>
+</div>
+
+<nav id="menu">
+  <%= link_to 'HOME', "home#index" %>
+  <%= link_to 'ARCHIVE', pages_path %>
+</nav>
+
+<div id="bottom">
+  <div id="links">
+    <a id="patreon">Patreon</a>
+    <a id="twitch">Twitch</a>
+    <a id="twitter">Twitter</a>
+    <a id="instagram">Instagram</a>
+  </div>
+</div>
+
+<%# fullwrap end %>
+</div> 
