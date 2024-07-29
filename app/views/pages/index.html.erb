@@ -1,6 +1,9 @@
 <% if admin_signed_in? %>
-  <% @pages.chapters do |chapter| %>
-    <>
+
+  <%# create chapter %>
+
+  <% @pages.each do |page| %>
+    
     <% if page.invalid? %>
       <%= link_to "Invalid page. Page number: #{page.page_number}. Click to destroy", page_path(page), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       <% next %>

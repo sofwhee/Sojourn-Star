@@ -70,3 +70,4 @@ end
 
 gem "devise", "~> 4.9"
 gem "aws-sdk-s3", require: false
+gem "strong_migrations"
