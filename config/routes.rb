@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chapters
   devise_for :admins, only: :sessions, controllers: { registrations: "registrations" }
 
   resources :pages

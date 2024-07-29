@@ -1,6 +1,7 @@
 <% if admin_signed_in? %>
 
   <%# create chapter %>
+  <div><%= link_to "New chapter", new_chapter_path %></div>
 
   <% @pages.each do |page| %>
     
@@ -25,19 +26,19 @@
   
   <%= link_to "New page", new_page_path %>
 
-<% else %>
-  <% @pages.sorted.each do |page| %>
 
-    <% if page.invalid? %>
-      <% next %>
-    <%end %>
+<% @pages.sorted.each do |page| %>
 
-    <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
-    <div>Chapter <%= page.chapter %></div>
-    <div><%= link_to page.page_number, page %></div>
+  <% if page.invalid? || page.draft? || page.scheduled? %>
+    <% next %>
+  <%end %>
 
-  <% end %>
-<% end%>
+  <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
+  <div>Chapter <%= page.chapter %></div>
+  <div><%= link_to page.page_number, page %></div>
+
+<% end %>
+
 
 <nav id="menu">
   <%= link_to 'HOME', "home#index" %>

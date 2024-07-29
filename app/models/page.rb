@@ -6,7 +6,6 @@ class Page < ApplicationRecord
   validates :page_number, uniqueness: true
 
   scope :sorted, -> { order(page_number: :asc) }
-  scope :grouped, -> { select() }
   scope :draft, -> { where(published_at: nil) }
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :scheduled, -> { where("published_at > ?", Time.current) }
