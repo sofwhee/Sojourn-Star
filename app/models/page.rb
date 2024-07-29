@@ -1,18 +1,15 @@
 class Page < ApplicationRecord
+  has_one :chapter
   has_one_attached :page_image
 
   validates :chapter, :page_number, :page_image, presence: true
   validates :page_number, uniqueness: true
 
-  scope :sorted, -> { order(chapter: :asc, page_number: :asc) }
+  scope :sorted, -> { order(page_number: :asc) }
   scope :grouped, -> { select() }
   scope :draft, -> { where(published_at: nil) }
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :scheduled, -> { where("published_at > ?", Time.current) }
-
-  def sorted
-    sorted.group
-  end
 
   def draft?
     published_at.nil?
