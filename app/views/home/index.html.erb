@@ -19,10 +19,10 @@
 </div>
 
 <div id="comicnavigation">
-  <%= link_to "First", page_path(Page.sorted.first.id), class: "navbutton" %>
-  <%= link_to_if @page.previous, "Previous", page_path(@page.previous.id), class: "navbutton" %>
-  <%= link_to_if @page.next, "Next", page_path(@page.next.id), class: "navbutton" %>
-  <%= link_to "Last", page_path(Page.sorted.last.id), class: "navbutton" %>
+  <%= link_to_if @page.first, "First",         @page.first, class: "navbutton" %>
+  <%= link_to_if @page.previous, "Previous",  @page.previous, class: "navbutton" %>
+  <%= link_to_if @page.next, "Next",          @page.next, class: "navbutton" %>
+  <%= link_to_if @page.last, "Last",           @page.last, class: "navbutton" %>
 
   <a class="cn-first">first</a>
   <a class="cn-prev">prev</a>

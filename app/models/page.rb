@@ -21,17 +21,20 @@ class Page < ApplicationRecord
     published_at? && published_at > Time.current
   end
 
-  def next_id
-    next_page = self.class.where("page_number > ?", page_number).first
-    if next_page?
-      next_page.id
-    else
-      nil
-    end
+  def next
+    self.class.where("page_number > ?", page_number).first
   end
 
   def previous
     self.class.where("page_number < ?", page_number).last
+  end
+
+  def first
+    self.class.sorted.first
+  end
+
+  def last
+    self.class.sorted.last
   end
 end
 
