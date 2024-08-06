@@ -23,14 +23,6 @@
   <%= link_to_if @page.previous, "Previous",  @page.previous, class: "navbutton" %>
   <%= link_to_if @page.next, "Next",          @page.next, class: "navbutton" %>
   <%= link_to_if @page.last, "Last",           @page.last, class: "navbutton" %>
-
-  <a class="cn-first">first</a>
-  <a class="cn-prev">prev</a>
-  <% if @page %>
-    <%# <a class="cn-pageinfo"><%= @page.page_number.to_s%></a> %>
-  <% end %>
-  <a class="cn-next">next</a>
-  <a class="cn-last">last</a>
 </div>
 
 <div id="pageandchapter">
