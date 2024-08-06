@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
 
     if @page.update(page_params)
-      bump_all_pages(@page.id, @page.page_number)
+      # bump_all_pages(@page.id, @page.page_number)
       redirect_to pages_path
     else  
       render :edit, status: :unprocessable_entity
