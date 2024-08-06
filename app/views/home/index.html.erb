@@ -1,8 +1,13 @@
 <div id="fullwrap">
 
-<a id="comictitle" href=<%= "home#index" %>>Sojourn Star</a>
+<a id="comictitle" href=<%= home_index_path %>>Sojourn Star</a>
+<%# <div><%= link_to image_tag(), home_index_path %></div> %>
 
 <% @page = Chapter.last.pages.first %>
+
+<div id="sitenavigation">
+  <%= link_to "Archive", pages_path %>
+</div>
 
 <div id="cpage">
   <% if @page %>
