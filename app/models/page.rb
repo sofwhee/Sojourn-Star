@@ -20,6 +20,14 @@ class Page < ApplicationRecord
   def scheduled?
     published_at? && published_at > Time.current
   end
+
+  def next
+    self.class.where("page_number > ?", page_number).first
+  end
+
+  def previous
+    self.class.where("page_number < ?", page_number).last
+  end
 end
 
 # Page.draft
