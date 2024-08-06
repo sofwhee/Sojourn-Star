@@ -19,7 +19,11 @@
 </div>
 
 <div id="comicnavigation">
-  <%= link_to "Previous", page_path(@page.previous.id), class: "navbutton" %>
+  <%= link_to "First", page_path(Page.sorted.first.id), class: "navbutton" %>
+  <%= link_to_unless(@page.previous.nil?, "Previous", page_path(@page.previous.id), class: "navbutton") %>
+  <%= link_to_unless(@page.next.nil?, "Next", page_path(@page.next.id), class: "navbutton") %>
+  <%= link_to "Last", page_path(Page.sorted.last.id), class: "navbutton" %>
+
   <a class="cn-first">first</a>
   <a class="cn-prev">prev</a>
   <% if @page %>
