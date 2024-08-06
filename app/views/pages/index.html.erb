@@ -2,7 +2,7 @@
   <div><%= link_to "New chapter", new_chapter_path %></div>
 <% end %>
 
-<% @chapters.each do |chapter| %>
+<% @chapters.sorted.each do |chapter| %>
   <div><%= chapter.name %></div><br>
 
   <% chapter.pages.sorted.each do |page| %>
