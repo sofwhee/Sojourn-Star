@@ -55,13 +55,29 @@ body{
 
 #fullwrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 
   background: #4E5DA5;
   background: -moz-linear-gradient(top, #4E5DA5 0%, #4C6B8E 100%);
   background: -webkit-linear-gradient(top, #4E5DA5 0%, #4C6B8E 100%);
   background: linear-gradient(to bottom, #4E5DA5 0%, #4C6B8E 100%);
+}
+
+#centercolumn {
+  display: flex;
+}
+
+#leftcolumn, #sitenavigation, #rightcolumn, #comicnavigation, #socials {
+  display: flex;
+  flex-direction: column;
+}
+
+#sitenavigation {
+
+}
+
+#posteddate {
+
 }
 
 #cpage {
@@ -73,4 +89,8 @@ body{
   background:rgb(114, 131, 94);
   border-radius: 15px;
   padding: 25px;
+}
+
+#pageandchapter {
+  
 }
