@@ -8,8 +8,10 @@
 
 <p><%= @page.page_number %></p>
 
+<% if admin_signed_in? %>
 <ul>
   <li><%= link_to "Edit", edit_page_path(@page) %></li>
 </ul>
+<% end %>
 
 <p><%@page.page_image%></p>
