@@ -9,6 +9,9 @@
   <%= link_to "Archive", pages_path, class: "link-text" %>
 </div>
 
+<div id="posteddate">
+</div>
+
 <div id="cpage">
   <% if @page %>
     <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "comic_image") %>
@@ -19,13 +22,19 @@
   <a class="cn-first">first</a>
   <a class="cn-prev">prev</a>
   <% if @page %>
-    <a class="cn-pageinfo"><%= @page.page_number.to_s%></a>
+    <%# <a class="cn-pageinfo"><%= @page.page_number.to_s%></a> %>
   <% end %>
   <a class="cn-next">next</a>
   <a class="cn-last">last</a>
 </div>
 
-<div id="bottom">
+<div id="pageandchapter">
+  <% if @page %>
+  <%# <%= "Page #{@page.page_number.to_s} Chapter #{@page.chapter.chapter_number.to_s}" %> %>
+  <% end %>
+</div>
+
+<div id="socials">
   <div id="links">
     <a id="patreon">Patreon</a>
     <a id="twitch">Twitch</a>
