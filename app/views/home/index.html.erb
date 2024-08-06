@@ -24,7 +24,7 @@
   </div>
 
 
-  <div id= right_column>
+  <div id= rightcolumn>
 
     <div id="comicnavigation">
       <%= link_to_if @page.first, "First",         @page.first, class: "navbutton" %>
@@ -34,10 +34,7 @@
     </div>
 
     <div id="pageandchapter">
-      <% if @page %>
-        Sample
-      <%# <%= "Page #{@page.page_number.to_s} Chapter #{@page.chapter.chapter_number.to_s}" %> %>
-      <% end %>
+      Sample
     </div>
   </div>
 

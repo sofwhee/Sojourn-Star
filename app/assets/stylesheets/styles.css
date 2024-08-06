@@ -72,6 +72,10 @@ body{
   flex-direction: column;
 }
 
+#leftcolumn, #rightcolumn {
+  justify-content: space-between;
+}
+
 #sitenavigation {
 
 }
@@ -92,5 +96,5 @@ body{
 }
 
 #pageandchapter {
-  
+
 }
