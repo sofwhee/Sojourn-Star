@@ -10,6 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
+  <body>
   <%= yield %>
 
    <%# <nav id="menu"> %>
@@ -19,5 +20,6 @@
     <%#= link_to 'Log out', destroy_admin_session_path, data: {turbo_method: :delete} %>
     <%# end %>
    <%# </nav> %>
-  
+  </body>
+
 </html>
