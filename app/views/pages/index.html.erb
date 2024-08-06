@@ -25,6 +25,7 @@
 
     <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
     <div><%= link_to page.page_number, page %></div>
+    <div><%= link_to "Edit", edit_page_path(page) %></div>
 
   <% end %>
 <% end %>
