@@ -3,8 +3,12 @@
 <% end %>
 
 <% @chapters.sorted.each do |chapter| %>
+  <% if admin_signed_in? %>
   <div><%= link_to "#{chapter.chapter_number} - #{chapter.name}", chapter %></div>
   <div><%= link_to "Edit", edit_chapter_path(chapter) %></div><br>
+  <% else %>
+  <div><%= "#{chapter.chapter_number} - #{chapter.name}" %></div>
+  <% end %>
 
   <% chapter.pages.sorted.each do |page| %>
     
@@ -26,7 +30,9 @@
 
     <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
     <div><%= link_to page.page_number, page %></div>
+    <% if admin_signed_in? %>
     <div><%= link_to "Edit", edit_page_path(page) %></div>
+    <% end%>
 
   <% end %>
 <% end %>
