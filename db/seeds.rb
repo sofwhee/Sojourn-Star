@@ -8,7 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-admin = Admin.where(email: "sofiamsola@outlook.com").first_or_initialize(:password => 'password', :password_confirmation => 'password')
 unless Admin.exists?
-  admin.save
+  Admin.create(email: 'soup@a.com', password: 'soupsoup', password_confirmation: 'soupsoup')
 end

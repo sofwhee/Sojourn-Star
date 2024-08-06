@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :set_page, except: [:index, :new, :create]
 
   def index
+    @chapters = Chapter.all
     @pages = admin_signed_in? ? Page.sorted : Page.published.sorted
   end
 
@@ -10,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def new
+    @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @page = Page.new
   end
 
@@ -22,22 +24,24 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
     
     if @page.save
-      redirect_to @page
+      redirect_to pages_path
     else
       render :new, status: :unprocessable_entity
     end
   end
   
   def edit
+    @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @page = Page.find(params[:id])
   end
 
   def update
+    @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @page = Page.find(params[:id])
 
     if @page.update(page_params)
       bump_all_pages(@page.id, @page.page_number)
-      redirect_to @page
+      redirect_to pages_path
     else  
       render :edit, status: :unprocessable_entity
     end 
@@ -52,7 +56,7 @@ class PagesController < ApplicationController
   
   private
   def page_params
-    params.require(:page).permit(:cover_image, :chapter, :page_number, :published_at, :page_image)
+    params.require(:page).permit(:chapter_id, :page_number, :published_at, :page_image)
   end
 
   def require_login
@@ -71,12 +75,13 @@ class PagesController < ApplicationController
       redirect_to root_path
   end
 
-  # def bump_all_pages(page_id, page_num)
-  #   if Page.where(page_number: page_num).exists?
-  #     Page.where(page_number: page_num..).find_each do |cur_page|
-  #       cur_page.page_number += 1 unless cur_page.id == page_id
-  #     end
-  #   end
-  # end
+  def bump_all_pages(page_id, page_number)
+    puts page_id
+    puts page_number
+    later_pages = Page.where(`page_number >= #{page_number} and id != #{page_id}`)
+    later_pages.each do |cur_page|
+      cur_page.update_attribute('page_number', (cur_page.page_number + 1))
+    end
+  end
 
 end

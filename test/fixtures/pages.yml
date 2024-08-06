@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# one:
-#   chapter: 1
-#   page: 1
-#   image: MyString
+# image_tester:
+#   chapter: "1"
+#   page_number: 4
+#   published_at: <%= Time.current %>
 
 # two:
 #   chapter: 1

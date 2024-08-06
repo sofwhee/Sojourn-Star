@@ -1,46 +1,39 @@
 <% if admin_signed_in? %>
-
-  <%# create chapter %>
   <div><%= link_to "New chapter", new_chapter_path %></div>
+<% end %>
 
-  <% @pages.each do |page| %>
+<% @chapters.each do |chapter| %>
+  <div><%= chapter.name %></div><br>
+
+  <% chapter.pages.sorted.each do |page| %>
     
     <% if page.invalid? %>
-      <%= link_to "Invalid page. Page number: #{page.page_number}. Click to destroy", page_path(page), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       <% next %>
-    <%end %>
-
-    <% if page.draft? %>
-      <h1>Draft</h1>
     <% end %>
 
-    <% if page.scheduled? %>
-      <p>scheduled</p>
+    <% if page.draft? && admin_signed_in? %>
+      <p>Draft</p>
+    <% elsif page.draft? %>
+      <% next %>
+    <% end %>
+
+    <% if page.scheduled? && admin_signed_in? %>
+      <p>Scheduled</p>
+    <% elsif page.scheduled? %>
+      <% next %>
     <% end %>
 
     <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
-    <div>Chapter <%= page.chapter %></div>
     <div><%= link_to page.page_number, page %></div>
 
   <% end %>
-  
-  <%= link_to "New page", new_page_path %>
-
-
-<% @pages.sorted.each do |page| %>
-
-  <% if page.invalid? || page.draft? || page.scheduled? %>
-    <% next %>
-  <%end %>
-
-  <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
-  <div>Chapter <%= page.chapter %></div>
-  <div><%= link_to page.page_number, page %></div>
-
 <% end %>
 
-
-<nav id="menu">
-  <%= link_to 'HOME', "home#index" %>
-  <%= link_to 'ARCHIVE', pages_path %>
-</nav>
+<% if admin_signed_in? %>
+  <%= link_to "New page", new_page_path %>
+  <% @pages.each do |page|%>
+    <% if page.invalid?%>
+      <%= link_to "Invalid page. Page number: #{page.page_number}. Click to edit", edit_page_path(page)%>
+    <% end %>
+  <% end %>
+<% end %>

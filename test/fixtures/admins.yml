@@ -9,3 +9,8 @@
 #
 # two: {}
 # column: value
+
+test_admin: {
+  email: test@example.com,
+  encrypted_password: <%= Admin.new.send(:password_digest, '1234567890') %>
+  }

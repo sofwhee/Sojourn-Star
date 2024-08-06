@@ -2,23 +2,23 @@
 
 <a id="comictitle" href=<%= "home#index" %>>Sojourn Star</a>
 
+<% @page = Page.last %>
+
 <div id="cpage">
-  <% @page = Page.last %>
-  <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "comic_image") %>
+  <% if @page %>
+    <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "comic_image") %>
+  <% end %>
 </div>
 
 <div id="comicnavigation">
   <a class="cn-first">first</a>
   <a class="cn-prev">prev</a>
-  <a class="cn-pageinfo"><%= @page.page_number.to_s%></a>
+  <% if @page %>
+    <a class="cn-pageinfo"><%= @page.page_number.to_s%></a>
+  <% end %>
   <a class="cn-next">next</a>
   <a class="cn-last">last</a>
 </div>
-
-<nav id="menu">
-  <%= link_to 'HOME', "home#index" %>
-  <%= link_to 'ARCHIVE', pages_path %>
-</nav>
 
 <div id="bottom">
   <div id="links">

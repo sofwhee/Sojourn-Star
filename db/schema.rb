@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_29_012941) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_01_212911) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_29_012941) do
     t.datetime "updated_at", null: false
     t.integer "page_number"
     t.datetime "published_at"
+    t.bigint "chapter_id"
+    t.index ["chapter_id"], name: "index_pages_on_chapter_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

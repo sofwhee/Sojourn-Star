@@ -6,8 +6,6 @@
   <%# <%= image_tag(@page.page_image.representation(resize_to_limit: [100, 100])) %>
 <% end %>
 
-<h1><%= @page.chapter %></h1>
-
 <p><%= @page.page_number %></p>
 
 <ul>
@@ -15,8 +13,3 @@
 </ul>
 
 <p><%@page.page_image%></p>
-
-<nav id="menu">
-  <%= link_to 'HOME', "home#index" %>
-  <%= link_to 'ARCHIVE', pages_path %>
-</nav>

@@ -11,5 +11,10 @@
   </head>
 
   <%= yield %>
+
+  <nav id="menu">
+    <%= link_to 'HOME', "home#index" %>
+    <%= link_to 'ARCHIVE', pages_path %>
+  </nav>
   
 </html>

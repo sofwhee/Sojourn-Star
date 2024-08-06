@@ -3,7 +3,6 @@ class Page < ApplicationRecord
   has_one_attached :page_image
 
   validates :chapter, :page_number, :page_image, presence: true
-  validates :page_number, uniqueness: true
 
   scope :sorted, -> { order(page_number: :asc) }
   scope :draft, -> { where(published_at: nil) }

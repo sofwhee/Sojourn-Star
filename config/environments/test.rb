@@ -61,4 +61,8 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Fix Devise integration testing error 'undefined method `[]=' for nil:NilClass' 
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Cookies
+  Rails.application.config.middleware.insert_before Warden::Manager, ActionDispatch::Session::CookieStore
 end
