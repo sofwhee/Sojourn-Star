@@ -2,7 +2,7 @@
 
 <a id="comictitle" href=<%= "home#index" %>>Sojourn Star</a>
 
-<% @page = Page.last %>
+<% @page = Chapter.last.pages.first %>
 
 <div id="cpage">
   <% if @page %>
