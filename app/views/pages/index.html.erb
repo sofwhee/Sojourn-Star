@@ -3,7 +3,7 @@
 <% end %>
 
 <% @chapters.sorted.each do |chapter| %>
-  <div><%= link_to chapter.name, chapter %></div><br>
+  <div><%= link_to "#{chapter.chapter_number} - #{chapter.name}", chapter %></div><br>
 
   <% chapter.pages.sorted.each do |page| %>
     
