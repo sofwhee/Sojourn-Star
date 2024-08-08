@@ -76,6 +76,11 @@ table {
   flex-direction: column;
 }
 
+#leftcolumn, #rightcolumn {
+  justify-content: space-between;
+  flex: none;
+}
+
 #leftcolumn {
   align-items: flex-end;
 }
@@ -86,17 +91,6 @@ table {
 
 #sitenavigation, #comicnavigation, #socials {
   align-items: center;
-}
-
-#cpage {
-}
-
-#cimage {
-
-}
-
-#leftcolumn, #rightcolumn {
-  justify-content: space-between;
 }
 
 #sitenavigation {
