@@ -76,7 +76,15 @@ table {
   flex-direction: column;
 }
 
-#sitenavigation, #comicnavigation {
+#leftcolumn {
+  align-items: flex-end;
+}
+
+#rightcolumn {
+  align-items: flex-start;
+}
+
+#sitenavigation, #comicnavigation, #socials {
   align-items: center;
 }
 
@@ -96,7 +104,7 @@ table {
 }
 
 #posteddate {
-
+  text-align: right;
 }
 
 #cpage {

@@ -12,7 +12,7 @@
     </div>
 
     <div id="posteddate">
-      Posted
+      <p>Posted</p>
       <%= @page.published_at.strftime("%d/%m/%Y") %>
     </div>
   </div>
@@ -35,7 +35,7 @@
     </div>
 
     <div id="pageandchapter">
-      <%= "Page #{@page.page_number}" %>
+      <p id="pagenum"><%= "Page #{@page.page_number}" %></p>
       <%= "Chapter #{@page.chapter.chapter_number}" %>
     </div>
   </div>
