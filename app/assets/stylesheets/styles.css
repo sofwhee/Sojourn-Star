@@ -76,6 +76,10 @@ table {
   flex-direction: column;
 }
 
+#sitenavigation, #comicnavigation {
+  align-items: center;
+}
+
 #cpage {
 }
 
