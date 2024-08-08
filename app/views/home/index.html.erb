@@ -2,13 +2,15 @@
 
 <a id="comictitle" href=<%= home_index_path %>>Sojourn Star</a>
 
-<% @page = Chapter.last.pages.first %>
+<% @page = Chapter.last.pages.sorted.first %>
 
 <div id="centercolumn">
 
   <div id="leftcolumn">
     <div id="sitenavigation">
       <%= link_to "Archive", pages_path, class: "link-text" %>
+      <a>Ars Arcanum</a>
+      <a>Shop</a>
     </div>
 
     <div id="posteddate">
