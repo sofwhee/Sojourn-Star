@@ -26,6 +26,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
   text-decoration: none;
   color: antiquewhite;
+  list-style: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -56,10 +57,12 @@ table {
 @import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
 #fullwrap {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
 
+  display: flex;
   min-height: 100dvh;
+  overflow-x: hidden;
   box-sizing: border-box;
 
   background: #000000;
@@ -70,13 +73,32 @@ table {
   padding: 26px;
 }
 
-#leftcolumn, #sitenavigation, #rightcolumn, #comicnavigation, #socials {
+#cpage img {
+  max-width: 100%;
+}
+
+#leftcolumn, #rightcolumn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#sitenavigation, #comicnavigation, #socials {
+  text-align: center;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+/* --- */
+
+/* #leftcolumn, #sitenavigation, #rightcolumn, #comicnavigation, #socials {
   display: flex;
   flex-direction: column;
 }
 
 #sitenavigation, #comicnavigation, #socials {
   align-items: center;
+  height: 500px;
 }
 
 #centercolumn {
@@ -101,9 +123,13 @@ table {
   border: solid 2px;
 }
 
+#socials {
+  border: solid 2px;
+}
+
 #posteddate {
   text-align: right;
-}
+} */
 
 #cpage {
   /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); */
