@@ -86,11 +86,22 @@ a:hover {
 
 /* --- */
 
-#cpage {
+#leftcolumn, #rightcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
-#cpage img {
-  max-width: 100%;
+#leftcolumntop, #rightcolumntop {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#leftcolumntop {
+
 }
 
 #comictitle {
@@ -103,34 +114,11 @@ a:hover {
   max-width: 100%;
 }
 
-#leftcolumn, #rightcolumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  flex-basis: 0;
+#cpage {
 }
 
-#rightcolumntop, #leftcolumntop{
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-#leftcolumntop {
-
-}
-
-#leftcolumnbot, #rightcolumnbot {
-  margin-bottom: 12px;
-}
-
-#leftcolumnbot {
-  align-self: flex-end;
-}
-
-#rightcolumnbot {
-  align-self: flex-start;
+#cpage img {
+  max-width: 100%;
 }
 
 #sitenavigation, #socials {
@@ -157,6 +145,18 @@ a:hover {
 
 .navbutton img {
   width: 100%;
+}
+
+#leftcolumnbot, #rightcolumnbot {
+  margin-bottom: 12px;
+}
+
+#leftcolumnbot {
+  align-self: flex-end;
+}
+
+#rightcolumnbot {
+  align-self: flex-start;
 }
 
 #posteddate {
