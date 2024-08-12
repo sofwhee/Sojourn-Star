@@ -19,13 +19,13 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 30px;
+	font-size: 22px;
   font-family: "Kalam", cursive;
   font-weight: 400;
   font-style: normal;
 	vertical-align: baseline;
   text-decoration: none;
-  color: antiquewhite;
+  color: rgb(255, 255, 255);
   list-style: none;
 }
 /* HTML5 display-role reset for older browsers */
