@@ -4,7 +4,7 @@
 
 <div id="leftcolumn">
   <div id="leftcolumntop">
-    <a id="comictitle" href=<%= home_index_path %>>Sojourn Star</a>
+    <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
     <div id="sitenavigation">
       <li><%= link_to "-Archive-", pages_path, class: "link-text" %></li>
@@ -30,10 +30,10 @@
 <div id="rightcolumn">
   <div id="rightcolumntop">
     <div id="comicnavigation">
-      <li><%= link_to_if @page.first, "First",         @page.first, class: "navbutton" %></li>
-      <li><%= link_to_if @page.previous, "Previous",  @page.previous, class: "navbutton" %></li>
-      <li><%= link_to_if @page.next, "Next",          @page.next, class: "navbutton" %></li>
-      <li><%= link_to_if @page.last, "Last",           @page.last, class: "navbutton" %></li>
+      <li><%= link_to_if @page.first, image_tag("first.png"),         @page.first, class: "navbutton" %></li>
+      <li><%= link_to_if @page.previous, image_tag("previous.png"),   @page.previous, class: "navbutton" %></li>
+      <li><%= link_to_if @page.next, image_tag("next.png"),           @page.next, class: "navbutton" %></li>
+      <li><%= link_to_if @page.last, image_tag("latest.png"),         @page.last, class: "navbutton" %></li>
     </div>
 
     <div id="socials">

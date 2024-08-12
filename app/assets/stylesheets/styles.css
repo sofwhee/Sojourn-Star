@@ -19,7 +19,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 22px;
+	font-size: 18px;
   font-family: "Kalam", cursive;
   font-weight: 400;
   font-style: normal;
@@ -57,6 +57,9 @@ li {
 a {
   white-space: nowrap;
 }
+a:hover {
+  color:rgb(219, 210, 86)
+}
 
 /* ------ */
 
@@ -91,17 +94,13 @@ a {
 }
 
 #comictitle {
-
+  margin-left:  -13%;
+  margin-right: -11%;
+  margin-top:   -5%;
 }
 
-#sitenavigation {
-
-}
-
-#sitenavigation, #socials {
-  text-align: center;
-  height: 60vh;
-  text-wrap: none;
+#comictitle img {
+  max-width: 100%;
 }
 
 #leftcolumn, #rightcolumn {
@@ -112,10 +111,14 @@ a {
   flex-basis: 0;
 }
 
-#leftcolumntop, #rightcolumntop {
+#rightcolumntop, #leftcolumntop{
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+
+#leftcolumntop {
+
 }
 
 #leftcolumnbot, #rightcolumnbot {
@@ -131,23 +134,33 @@ a {
 }
 
 #sitenavigation, #socials {
+  text-align: center;
+  height: 400px;
+  width:  116px;
   border: solid 2px;
   border-radius: 2px;
   border-color:rgba(255, 255, 255, 0.116);
-  padding: 20px 16px 20px;
+  padding: 20px 7px 20px;
+  flex-shrink:  0;
 }
 
-#socials {
+#socials li {
+  line-height: 3;
+}
+
+#comicnavigation {
+  width: 110px;
+  text-align: center;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.navbutton img {
+  width: 100%;
 }
 
 #posteddate {
   text-align: right;
-}
-
-#comicnavigation {
-  /* background:rgb(114, 131, 94);
-  border-radius: 15px;
-  padding: 25px; */
 }
 
 #pageandchapter {
