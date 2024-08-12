@@ -3,22 +3,23 @@
 <% @page = Chapter.last.pages.sorted.first %>
 
 <div id="leftcolumn">
+  <div id="leftcolumntop">
+    <a id="comictitle" href=<%= home_index_path %>>Sojourn Star</a>
 
-  <a id="comictitle" href=<%= home_index_path %>>Sojourn Star</a>
-
-  <div id="sitenavigation">
-    <li><%= link_to "Archive", pages_path, class: "link-text" %></li>
-    <li><a>Ars Arcanum</a></li>
-    <li><a>Shop</a></li>
+    <div id="sitenavigation">
+      <li><%= link_to "Archive", pages_path, class: "link-text" %></li>
+      <li><a>Ars Arcanum</a></li>
+      <li><a>Shop</a></li>
+    </div>
   </div>
 
+  <div id="leftcolumnbot">
+    <div id="posteddate">
+      <p>Posted</p>
+      <%= @page.published_at.strftime("%d/%m/%Y") %>
+    </div>
+  </div>
 </div>
-
-
-<%# <div id="posteddate"> %>
-  <%# <p>Posted</p> %>
-  <%# <%= @page.published_at.strftime("%d/%m/%Y") %>
-<%# </div> %>
 
 <div id="cpage">
   <% if @page %>
@@ -26,30 +27,30 @@
   <% end %>
 </div>
 
-<%# <div id="pageandchapter"> %>
-  <%# <p id="pagenum"><%= "Page #{@page.page_number}" </p> %>
-  <%# <%= "Chapter #{@page.chapter.chapter_number}" %>
-<%# </div> %>
+<div id="rightcolumn">
+  <div id="rightcolumntop">
+    <div id="comicnavigation">
+      <li><%= link_to_if @page.first, "First",         @page.first, class: "navbutton" %></li>
+      <li><%= link_to_if @page.previous, "Previous",  @page.previous, class: "navbutton" %></li>
+      <li><%= link_to_if @page.next, "Next",          @page.next, class: "navbutton" %></li>
+      <li><%= link_to_if @page.last, "Last",           @page.last, class: "navbutton" %></li>
+    </div>
 
-<div id= rightcolumn>
-
-  <div id="comicnavigation">
-    <li><%= link_to_if @page.first, "First",         @page.first, class: "navbutton" %></li>
-    <li><%= link_to_if @page.previous, "Previous",  @page.previous, class: "navbutton" %></li>
-    <li><%= link_to_if @page.next, "Next",          @page.next, class: "navbutton" %></li>
-    <li><%= link_to_if @page.last, "Last",           @page.last, class: "navbutton" %></li>
+    <div id="socials">
+      <li><a id="patreon">Patreon</a></li>
+      <li><a id="twitch">Twitch</a></li>
+      <li><a id="twitter">Twitter</a></li>
+      <li><a id="instagram">Instagram</a></li>
+    </div>
   </div>
 
-  <div id="socials">
-    <li><a id="patreon">Patreon</a></li>
-    <li><a id="twitch">Twitch</a></li>
-    <li><a id="twitter">Twitter</a></li>
-    <li><a id="instagram">Instagram</a></li>
+  <div id="rightcolumnbot">
+    <div id="pageandchapter">
+      <p id="pagenum"><%= "Page #{@page.page_number}"%> </p>
+      <%= "Chapter #{@page.chapter.chapter_number}" %>
+    </div>
   </div>
-
 </div>
 
 <%# fullwrap end %>
 </div>
-
-<script src="home.js"></script>

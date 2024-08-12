@@ -68,8 +68,7 @@ table {
   background: linear-gradient(to bottom, #4E5DA5 0%, #4C6B8E 100%); */
 
   padding: 26px;
-
-
+  gap: 16px;
 }
 
 @media screen and (max-width: 100px) {
@@ -100,9 +99,23 @@ table {
 
 #leftcolumn, #rightcolumn {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
   flex-basis: 0;
+}
+
+#leftcolumntop, #rightcolumntop {
+  display: flex;
+  justify-content: space-between;
+}
+
+#leftcolumnbot {
+  align-self: flex-end;
+}
+
+#rightcolumnbot {
+  align-self: flex-start;
 }
 
 #sitenavigation {
