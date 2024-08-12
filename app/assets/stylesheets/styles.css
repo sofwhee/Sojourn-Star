@@ -68,7 +68,6 @@ a:hover {
 #fullwrap {
   display:    flex;
   min-height: 100dvh;
-  overflow-x: hidden;
   box-sizing: border-box;
 
   background: #000000;
@@ -78,10 +77,6 @@ a:hover {
 
   padding: 26px;
   gap: 16px;
-}
-
-@media screen and (max-width: 100px) {
-
 }
 
 /* --- */
@@ -105,13 +100,10 @@ a:hover {
 }
 
 #comictitle {
-  margin-left:  -13%;
-  margin-right: -11%;
-  margin-top:   -5%;
 }
 
 #comictitle img {
-  max-width: 100%;
+  width: 150px;
 }
 
 #cpage {
@@ -165,4 +157,43 @@ a:hover {
 
 #pageandchapter {
 
+}
+
+@media screen and (max-width: 1250px) {
+
+  #fullwrap {
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  #cpage {
+    order: 1;
+  }
+
+  #rightcolumn {
+    order: 2;
+  }
+
+  #rightcolumntop {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #comicnavigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .navbutton img {
+    width: 110px;
+  }
+
+  #leftcolumn {
+    order: 3;
+  }
 }
