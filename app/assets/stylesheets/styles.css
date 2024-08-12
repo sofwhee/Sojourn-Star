@@ -57,10 +57,7 @@ table {
 @import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
 #fullwrap {
-  /* display: flex;
-  justify-content: space-between; */
-
-  display: flex;
+  display:    flex;
   min-height: 100dvh;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -71,52 +68,41 @@ table {
   background: linear-gradient(to bottom, #4E5DA5 0%, #4C6B8E 100%); */
 
   padding: 26px;
+
+
+}
+
+@media screen and (max-width: 100px) {
+
+}
+
+/* --- */
+
+#cpage {
 }
 
 #cpage img {
   max-width: 100%;
 }
 
-#leftcolumn, #rightcolumn {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+#comictitle {
+
+}
+
+#sitenavigation {
+
 }
 
 #sitenavigation, #comicnavigation, #socials {
   text-align: center;
-  height: 450px;
-  flex-shrink: 0;
-}
-
-/* --- */
-
-/* #leftcolumn, #sitenavigation, #rightcolumn, #comicnavigation, #socials {
-  display: flex;
-  flex-direction: column;
-}
-
-#sitenavigation, #comicnavigation, #socials {
-  align-items: center;
   height: 500px;
 }
 
-#centercolumn {
-  display: flex;
-}
-
 #leftcolumn, #rightcolumn {
+  display: flex;
   justify-content: space-between;
-  flex: none;
-  margin: 24px;
-}
-
-#leftcolumn {
-  align-items: flex-end;
-}
-
-#rightcolumn {
-  align-items: flex-start;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 #sitenavigation {
@@ -129,11 +115,6 @@ table {
 
 #posteddate {
   text-align: right;
-} */
-
-#cpage {
-  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); */
-  /* border-radius: 7px; */
 }
 
 #comicnavigation {
