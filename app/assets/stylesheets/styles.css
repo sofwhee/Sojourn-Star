@@ -66,7 +66,6 @@ a:hover {
 @import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
 #fullwrap {
-  display:    flex;
   min-height: 100dvh;
   box-sizing: border-box;
 
@@ -79,39 +78,44 @@ a:hover {
   gap: 16px;
 }
 
-/* --- */
+/* -- grid setup -- */
 
-#leftcolumn, #rightcolumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  flex-basis: 0;
-}
-
-#leftcolumntop, #rightcolumntop {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-#leftcolumntop {
-
+#fullwrap {
+  display:    grid;
+  grid-template-columns: 15% 10% 50% 5% 20%;
 }
 
 #comictitle {
+  grid-column: 1;
 }
 
-#comictitle img {
-  width: 150px;
+#sitenavigation {
+  grid-column: 2;
+  justify-self: end;
 }
 
 #cpage {
+  grid-column: 3;
+}
+
+#comicnavigation {
+  grid-column: 4;
+  justify-self: start;
+}
+
+#socials {
+  grid-column: 5;
+  justify-self: end;
+}
+
+#comictitle img {
+  width: 100%;
 }
 
 #cpage img {
   max-width: 100%;
 }
+
 
 #sitenavigation, #socials {
   text-align: center;
@@ -121,7 +125,6 @@ a:hover {
   border-radius: 2px;
   border-color:rgba(255, 255, 255, 0.116);
   padding: 20px 7px 20px;
-  flex-shrink:  0;
 }
 
 #socials li {
@@ -139,18 +142,6 @@ a:hover {
   width: 100%;
 }
 
-#leftcolumnbot, #rightcolumnbot {
-  margin-bottom: 12px;
-}
-
-#leftcolumnbot {
-  align-self: flex-end;
-}
-
-#rightcolumnbot {
-  align-self: flex-start;
-}
-
 #posteddate {
   text-align: right;
 }
@@ -160,40 +151,4 @@ a:hover {
 }
 
 @media screen and (max-width: 1250px) {
-
-  #fullwrap {
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  #cpage {
-    order: 1;
-  }
-
-  #rightcolumn {
-    order: 2;
-  }
-
-  #rightcolumntop {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #comicnavigation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-  
-  .navbutton img {
-    width: 110px;
-  }
-
-  #leftcolumn {
-    order: 3;
-  }
 }
