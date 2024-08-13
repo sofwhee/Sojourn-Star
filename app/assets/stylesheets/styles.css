@@ -67,6 +67,7 @@ a:hover {
 
 #fullwrap {
   min-height: 100dvh;
+  max-width: 100%;
   box-sizing: border-box;
 
   background: #000000;
@@ -75,14 +76,14 @@ a:hover {
   background: linear-gradient(to bottom, #4E5DA5 0%, #4C6B8E 100%); */
 
   padding: 26px;
-  gap: 16px;
 }
 
 /* -- grid setup -- */
 
 #fullwrap {
   display:    grid;
-  grid-template-columns: 15% 10% 50% 5% 20%;
+  grid-template-columns: 3fr 2fr 10fr 1fr 4fr;
+  grid-column-gap: 16px;
 }
 
 #comictitle {
