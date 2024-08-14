@@ -6,14 +6,14 @@
 
 <div id="cpage">
   <div id="sitenavigation">
-    <li><%= link_to "-Archive-", pages_path, class: "link-text" %></li>
-    <li><a>-Ars Arcanum-</a></li>
-    <li><a>-Shop-</a></li>
+    <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
+    <li><a class="linktext">-Ars Arcanum-</a></li>
+    <li><a class="linktext">-Shop-</a></li>
   </div>
 
   <div id="posteddate">
-    <p>Posted</p>
-    <%= @page.published_at.strftime("%d/%m/%Y") %>
+    <li>Posted</li>
+    <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
   </div>
 
   <% if @page %>
@@ -21,8 +21,8 @@
   <% end %>
 
   <div id="pageandchapter">
-    <p id="pagenum"><%= "Page #{@page.page_number}"%> </p>
-    <%= "Chapter #{@page.chapter.chapter_number}" %>
+    <li id="pagenum"><%= "Page #{@page.page_number}"%> </li>
+    <li> <%= "Chapter #{@page.chapter.chapter_number}" %> </li>
   </div>
 
   <div id="comicnavigation">
@@ -35,10 +35,10 @@
 
 
 <div id="socials">
-  <li><a id="patreon">Patreon</a></li>
-  <li><a id="twitch">Twitch</a></li>
-  <li><a id="twitter">Twitter</a></li>
-  <li><a id="instagram">Instagram</a></li>
+  <li><a class="linktext" id="patreon">Patreon</a></li>
+  <li><a class="linktext" id="twitch">Twitch</a></li>
+  <li><a class="linktext" id="twitter">Twitter</a></li>
+  <li><a class="linktext" id="instagram">Instagram</a></li>
 </div>
 
 </div>
