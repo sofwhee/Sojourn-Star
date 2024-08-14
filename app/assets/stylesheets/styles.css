@@ -52,9 +52,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-li {
-  line-height: 2;
-}
 a {
   white-space: nowrap;
 }
@@ -67,6 +64,7 @@ a:hover {
 @import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
 #fullwrap {
+  position: relative;
   min-height: 100dvh;
   max-width: 100%;
   box-sizing: border-box;
@@ -79,69 +77,17 @@ a:hover {
   padding: 26px;
 }
 
-/* -- flex setup -- */
-
-#fullwrap {
-  /* display:    grid;
-  grid-template-columns: 3fr 2fr 10fr 1fr 4fr;
-  grid-template-rows: 1fr 1fr;
-  grid-column-gap: 16px; */
-
-  display: flex;
-  justify-content: space-between
-}
-
 #comictitle {
-  /* grid-column: 1;
-  grid-row: 1; */
-
-  flex: 0 0 auto;
-}
-
-#centerwrap {
-  display: flex;
-  justify-content:  center;
-  gap: 16px;
-
-  flex: 0 0 auto;
-}
-
-#sitenavigation {
-  /* grid-column: 2;
-  grid-row: 1;
-  justify-self: end; */
-  flex: 0 0 auto;
-}
-
-#cpage {
-  /* grid-column: 3;
-  grid-row: 1 / 3; */
-  flex: 0 0 auto
-}
-
-#comicnavigation {
-  /* grid-column: 4;
-  grid-row: 1;
-  justify-self: start; */
-  flex: 0 0 134px;
-}
-
-#socials {
-  /* grid-column: 5;
-  grid-row: 1;
-  justify-self: end; */
-
-  flex: 0 0 auto;
+  position: absolute;
 }
 
 #comictitle img {
   width: 300px;
 }
 
-#cpage img {
-  max-width: 100%;
-  max-height: 95dvh;
-  margin-bottom: -5dvh;
+#sitenavigation {
+  position: absolute;
+  left: -151px;
 }
 
 #sitenavigation, #socials {
@@ -152,38 +98,160 @@ a:hover {
   border-radius: 2px;
   border-color:rgba(255, 255, 255, 0.116);
   padding: 20px 7px 20px;
-}
-
-#socials li {
   line-height: 3;
 }
 
+#cpage {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#cpage img {
+  max-height: 95dvh;
+}
+
+
 #comicnavigation {
-  width: 100%;
+  position: absolute;
+  top: 26px;
+  right: -76px;
+}
+
+#comicnavigation li {
+  line-height: 4;
 }
 
 .navbutton img {
-  width: 110px;
-  position: relative;
-  right: 22px;
-}
-
-#centerwrap {
-  position: relative;
+  width: 60px; 
 }
 
 #posteddate {
   position: absolute;
   text-align: right;
-  left: 3%;
-  bottom: 0%;
+  left: 0px;
+  bottom: 12px;
+
+  transform: translatex(-116%)
 }
 
 #pageandchapter {
   position: absolute;
-  right: 5%;
-  bottom: 0%;
+  right: 0px;
+  bottom: 12px;
+
+  transform: translatex(116%)
 }
 
-@media screen and (max-width: 1250px) {
+#socials {
+  position: absolute;
+  right: 26px;
+}
+
+@media screen and (max-width: 1620px) {
+  #sitenavigation {
+    top: 146px;
+  }
+}
+
+@media screen and (max-width: 1293px) {
+  #comictitle img {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  #socials {
+    height: 300px;
+    top: 450px;
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 1000px) {
+    
+  #fullwrap, #comictitle, #sitenavigation, #cpage, #comicnavigation, #posteddate, #pageandchapter, #socials {
+    position: static;
+    transform: none;
+  }
+
+  a {
+    font-size: 30px;
+  }
+
+  #fullwrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0px;
+    box-sizing: content-box;
+  }
+  
+  #comictitle img {
+    width: 400px;
+  }
+  
+  #cpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #cpage img {
+    order: 1;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #comicnavigation {
+    order: 2;
+    display: flex;
+    gap: 60px;
+  }
+    
+  .navbutton img {
+    width: 100px; 
+  }
+
+  #posteddate {
+    order: 3;
+  }
+
+  #pageandchapter {
+    order: 4;
+  }
+  
+  #sitenavigation {
+    order: 5;
+  }
+  
+  #socials {
+    order: 6;
+  }
+  
+  #sitenavigation, #socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 26px;
+    row-gap: 12px;
+    height: 100%;
+    width: 80%;
+  }
+  
+  #posteddate {
+
+  }
+  
+  #pageandchapter {
+
+  }
+  
+  #socials {
+
+  }
+  
 }

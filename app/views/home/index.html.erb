@@ -4,23 +4,21 @@
 
 <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
-<div id="centerwrap">
+<div id="cpage">
   <div id="sitenavigation">
     <li><%= link_to "-Archive-", pages_path, class: "link-text" %></li>
     <li><a>-Ars Arcanum-</a></li>
     <li><a>-Shop-</a></li>
   </div>
-  
+
   <div id="posteddate">
     <p>Posted</p>
     <%= @page.published_at.strftime("%d/%m/%Y") %>
   </div>
 
-  <div id="cpage">
-    <% if @page %>
-      <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "cimage") %>
-    <% end %>
-  </div>
+  <% if @page %>
+    <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "cimage") %>
+  <% end %>
 
   <div id="pageandchapter">
     <p id="pagenum"><%= "Page #{@page.page_number}"%> </p>
@@ -34,6 +32,7 @@
     <li><%= link_to_if @page.last, image_tag("latest.png"),         @page.last, class: "navbutton" %></li>
   </div>
 </div>
+
 
 <div id="socials">
   <li><a id="patreon">Patreon</a></li>
