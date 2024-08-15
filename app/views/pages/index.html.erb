@@ -5,33 +5,37 @@
 <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
 <div id="chapterswrap">
-<% @chapters.sorted.each do |chapter| %>
 
-  <div class="chaptertitle"><%= "#{chapter.chapter_number} - #{chapter.name}" %>
-    <% if admin_signed_in? %>
-      <%= link_to "Edit", edit_chapter_path(chapter) %>
-    <% end %>
-  </div>
+  <ol class="chapterslist">
+  <% @chapters.sorted.each do |chapter| %>
 
-  <% chapter.pages.sorted.each do |page| %>
-    
-    <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
-    <div><%= link_to page.page_number, page %></div>
 
-    <% if page.invalid? || page.draft? || page.scheduled? %>
-      <% next %>
-    <% end %>
+    <li class="chaptertitle"><%= "#{chapter.name}" %>
+      <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "editbutton"){} %>
 
-    <% if admin_signed_in? %>
-      <%= tag.p 'Draft' class: 'adminonlypageinfo' if page.draft? %>
-      <%= tag.p 'Scheduled' class: 'adminonlypageinfo' if page.scheduled? %>
-      <%= link_to "Edit", edit_page_path(page) %>
-    <% end%>
+      <ol class="chaptergallery">
+      <% chapter.pages.sorted.each do |page| %>
+
+        <% next if page.invalid? || page.draft? || page.scheduled? %>
+
+        <li class="galleryitem">
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %>
+          <%= link_to page.page_number, page %>
+
+          <% if admin_signed_in? %>
+            <%= tag.p 'Draft' class: 'adminonlypageinfo' if page.draft? %>
+            <%= tag.p 'Scheduled' class: 'adminonlypageinfo' if page.scheduled? %>
+            <%= link_to "Edit", edit_page_path(page) %>
+          <% end%>
+        </li>
+      <% end %>
+      </ol>
+      
+    </li>
+
 
   <% end %>
-
-  
-<% end %>
+  </ol>
 
   <div id="sitenavigation">
     <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
