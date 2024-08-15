@@ -1,17 +1,51 @@
+<%= stylesheet_link_tag "page" %>
 
-<br><br>
+<div id="fullwrap">
 
-<% if @page.page_image.attached? %>
-  <%= image_tag(url_for(@page.page_image)) %>
-  <%# <%= image_tag(@page.page_image.representation(resize_to_limit: [100, 100])) %>
-<% end %>
+<%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
-<p><%= @page.page_number %></p>
+<div id="cpage">
+  <div id="sitenavigation">
+    <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
+    <li><a class="linktext">-Ars Arcanum-</a></li>
+    <li><a class="linktext">-Shop-</a></li>
+  </div>
+
+  <div id="posteddate">
+    <li>Posted</li>
+    <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
+  </div>
+
+  <% if @page %>
+    <%= image_tag(url_for(@page.page_image), title: @page.page_number.to_s, id: "cimage") %>
+  <% end %>
+
+  <div id="pageandchapter">
+    <li id="pagenum"><%= "Page #{@page.page_number}"%> </li>
+    <li> <%= "Chapter #{@page.chapter.chapter_number}" %> </li>
+  </div>
+
+  <div id="comicnavigation">
+    <li><%= link_to_if(@page.first, image_tag("first.png"),         @page.first, class: "navbutton"){} %></li>
+    <li><%= link_to_if(@page.previous, image_tag("previous.png"),   @page.previous, class: "navbutton"){} %></li>
+    <li><%= link_to_if(@page.next, image_tag("next.png"),           @page.next, class: "navbutton"){} %></li>
+    <li><%= link_to_if(@page.last, image_tag("latest.png"),         @page.last, class: "navbutton"){} %></li>
+  </div>
+</div>
+
+
+<div id="socials">
+  <li><a class="linktext" id="patreon">Patreon</a></li>
+  <li><a class="linktext" id="twitch">Twitch</a></li>
+  <li><a class="linktext" id="twitter">Twitter</a></li>
+  <li><a class="linktext" id="instagram">Instagram</a></li>
+</div>
 
 <% if admin_signed_in? %>
-<ul>
-  <li><%= link_to "Edit", edit_page_path(@page) %></li>
-</ul>
+<%= link_to "Edit", edit_page_path(@page), id: "editfromshow" %>
 <% end %>
 
-<p><%@page.page_image%></p>
+</div>
+
+<%# fullwrap end %>
+</div>
