@@ -4,14 +4,41 @@
 
 <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
-<div id="cpage">
+<div id="chapterswrap">
+<% @chapters.sorted.each do |chapter| %>
+
+  <div class="chaptertitle"><%= "#{chapter.chapter_number} - #{chapter.name}" %>
+    <% if admin_signed_in? %>
+      <%= link_to "Edit", edit_chapter_path(chapter) %>
+    <% end %>
+  </div>
+
+  <% chapter.pages.sorted.each do |page| %>
+    
+    <div><%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %></div>
+    <div><%= link_to page.page_number, page %></div>
+
+    <% if page.invalid? || page.draft? || page.scheduled? %>
+      <% next %>
+    <% end %>
+
+    <% if admin_signed_in? %>
+      <%= tag.p 'Draft' class: 'adminonlypageinfo' if page.draft? %>
+      <%= tag.p 'Scheduled' class: 'adminonlypageinfo' if page.scheduled? %>
+      <%= link_to "Edit", edit_page_path(page) %>
+    <% end%>
+
+  <% end %>
+
+  
+<% end %>
+
   <div id="sitenavigation">
     <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
     <li><a class="linktext">-Ars Arcanum-</a></li>
     <li><a class="linktext">-Shop-</a></li>
   </div>
 </div>
-
 
 <div id="socials">
   <li><a class="linktext" id="patreon">Patreon</a></li>
