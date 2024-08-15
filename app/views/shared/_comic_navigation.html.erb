@@ -1,0 +1,6 @@
+<div id="comicnavigation">
+  <li><%= link_to_if(@page.first, image_tag("first.png"),         @page.first, class: "navbutton"){} %></li>
+  <li><%= link_to_if(@page.previous, image_tag("previous.png"),   @page.previous, class: "navbutton"){} %></li>
+  <li><%= link_to_if(@page.next, image_tag("next.png"),           @page.next, class: "navbutton"){} %></li>
+  <li><%= link_to_if(@page.last, image_tag("latest.png"),         @page.last, class: "navbutton"){} %></li>
+</div>

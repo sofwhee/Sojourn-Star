@@ -15,15 +15,30 @@
   </head>
 
   <body>
-  <%= yield %>
 
-   <%# <nav id="menu"> %>
-    <%#= link_to 'HOME', home_index_path %>
-    <%#= link_to 'ARCHIVE', pages_path %>
-    <%# if admin_signed_in? %>
-    <%#= link_to 'Log out', destroy_admin_session_path, data: {turbo_method: :delete} %>
-    <%# end %>
-   <%# </nav> %>
+    <div id="fullwrap">
+      <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
+
+      <div id="cpage">
+
+        <ul id="sitenavigation">
+          <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
+          <li><a class="linktext">-Ars Arcanum-</a></li>
+          <li><a class="linktext">-Shop-</a></li>
+        </ul>
+
+        <%= yield %>
+      
+      </div>
+      
+      <div id="socials">
+        <li><a class="linktext" id="patreon">Patreon</a></li>
+        <li><a class="linktext" id="twitch">Twitch</a></li>
+        <li><a class="linktext" id="twitter">Twitter</a></li>
+        <li><a class="linktext" id="instagram">Instagram</a></li>
+      </div>
+
+    </div>
   </body>
 
 </html>
