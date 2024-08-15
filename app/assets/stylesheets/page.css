@@ -183,15 +183,6 @@ a:hover {
 }
 
 @media screen and (max-width: 1130px) {
-  #socials {
-    height: 300px;
-    top: 450px;
-  }
-}
-
-/* mobile */
-
-@media screen and (max-width: 1050px) {
     
   #fullwrap, #comictitle, #sitenavigation, #cpage, #comicnavigation, #posteddate, #pageandchapter, #socials {
     position: static;
