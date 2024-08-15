@@ -1,3 +1,34 @@
+<%= stylesheet_link_tag "archive" %>
+
+<div id="fullwrap">
+
+<%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
+
+<div id="cpage">
+  <div id="sitenavigation">
+    <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
+    <li><a class="linktext">-Ars Arcanum-</a></li>
+    <li><a class="linktext">-Shop-</a></li>
+  </div>
+</div>
+
+
+<div id="socials">
+  <li><a class="linktext" id="patreon">Patreon</a></li>
+  <li><a class="linktext" id="twitch">Twitch</a></li>
+  <li><a class="linktext" id="twitter">Twitter</a></li>
+  <li><a class="linktext" id="instagram">Instagram</a></li>
+</div>
+
+<% if admin_signed_in? %>
+<%= link_to "Edit", edit_page_path(@page), id: "editfromshow" %>
+<% end %>
+
+</div>
+
+<%# fullwrap end %>
+</div>
+
 <% if admin_signed_in? %>
   <div><%= link_to "New chapter", new_chapter_path %></div>
 <% end %>
