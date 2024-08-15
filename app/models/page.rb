@@ -24,11 +24,11 @@ class Page < ApplicationRecord
   end
 
   def next
-    self.class.where("page_number > ?", page_number).first
+    self.class.sorted.where("page_number > ?", page_number).first
   end
 
   def previous
-    self.class.where("page_number < ?", page_number).last
+    self.class.sorted.where("page_number < ?", page_number).last
   end
 
   def first

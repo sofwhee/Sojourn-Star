@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.friendly.find(params(:id))
+    @page = Page.friendly.find(params[:id])
   end
 
   def new
@@ -33,12 +33,12 @@ class PagesController < ApplicationController
   
   def edit
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
   end
 
   def update
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
 
     if @page.update(page_params)
       # bump_all_pages(@page.id, @page.page_number)
@@ -49,7 +49,7 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
     @page.destroy
 
     redirect_to root_path, status: :see_other
@@ -68,9 +68,9 @@ class PagesController < ApplicationController
 
   def set_page
     if admin_signed_in?
-      @page = Page.find(params[:id])
+      @page = Page.friendly.find(params[:id])
     else
-      @page = Page.published.find(params[:id])
+      @page = Page.published.friendly.find(params[:id])
     end
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path
