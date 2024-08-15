@@ -1,6 +1,8 @@
 class Page < ApplicationRecord
   belongs_to :chapter
   has_one_attached :page_image
+  extend FriendlyId
+  friendly_id :page_number, use: :slugged
 
   validates :chapter, :page_number, :page_image, presence: true
 

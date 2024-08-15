@@ -71,3 +71,4 @@ end
 gem "devise", "~> 4.9"
 gem "aws-sdk-s3", require: false
 gem "strong_migrations"
+gem 'friendly_id', '~> 5.5.0'

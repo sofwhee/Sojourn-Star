@@ -176,13 +176,15 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 1337px) {
+@media screen and (max-width: 1500px) {
   #comictitle img {
     width: 180px;
   }
 }
 
-@media screen and (max-width: 1130px) {
+/* mobile */
+
+@media screen and (max-width: 1250px) {
     
   #fullwrap, #comictitle, #sitenavigation, #cpage, #comicnavigation, #posteddate, #pageandchapter, #socials {
     position: static;
