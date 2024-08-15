@@ -17,6 +17,9 @@
   <body>
 
     <div id="fullwrap">
+
+      <%= yield :page_obj %>
+
       <%= link_to_if @page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
       <div id="cpage">
