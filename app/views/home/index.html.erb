@@ -1,6 +1,4 @@
-<% content_for :page_obj do %>
-  <% @page = Chapter.last.pages.sorted.first %>
-<% end %>
+<% @page = Chapter.last.pages.sorted.first %>
 
 <%= stylesheet_link_tag "page" %>
 

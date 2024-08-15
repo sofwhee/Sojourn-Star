@@ -13,8 +13,8 @@
         <li class="galleryitem">
           <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %>
           <%= link_to page.page_number, page %>
-          <%= tag.p 'Draft' class: 'adminonlypageinfo' if page.draft? %>
-          <%= tag.p 'Scheduled' class: 'adminonlypageinfo' if page.scheduled? %>
+          <%= tag.p 'Draft' if page.draft? %>
+          <%= tag.p 'Scheduled' if page.scheduled? %>
           <%= link_to "Edit", edit_page_path(page), class: "editbutton" %>
         </li>
     
