@@ -146,6 +146,8 @@ a:hover {
   height: calc(100vh - var(--top-marg) - var(--site-margin));
 
   display: flex; */
+
+  flex-basis: 100%;
 }
 
 .chaptertitle {
@@ -198,8 +200,9 @@ a:hover {
 }
 
 #socials {
-  margin-top: var(--site-margin-doubled);
+  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
   right: var(--site-margin);
+  flex: 0 0 auto;
 }
 
 .adminbutton {
