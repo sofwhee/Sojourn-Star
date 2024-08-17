@@ -19,8 +19,11 @@
 
     <div id="fullwrap">
 
-      <%= link_to_if Page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
-
+      <div id="titlewrap">
+      <%= render "shared/comic_title" %>
+      <%= yield :with_title %>
+      </div>
+      
       <%= yield %>
       
       <div id="socials">

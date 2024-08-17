@@ -71,21 +71,24 @@ a:hover {
   --site-margin-doubled: calc(var(--site-margin) * 2);
   --comic-title-width: 330px;
   --comic-title-height: 125px;
+  --site-nav-width: 116px;
 }
 
 /* Positioning */
 
-  #fullwrap {
+  /* #fullwrap {
     position: relative;
   }
 
   #comictitle, #cpage, #sitenavigation, #comicnavigation, #posteddate, #pageandchapter, #socials, #new, #chapterslist {
     position: absolute;
-  }
+  } */
 
 /* ------ */
 
 #fullwrap {
+  display: flex;
+
   min-height: 100dvh;
   max-width: 100%;
   box-sizing: border-box;
@@ -103,7 +106,7 @@ a:hover {
 }
 
 #sitenavigation {
-  margin-left: calc(var(--comic-title-width) + 24px);
+  margin-left: calc(var(--comic-title-width) + var(--site-margin-doubled));
   margin-top: var(--site-margin-doubled);
 }
 
@@ -134,16 +137,13 @@ a:hover {
   /* left: 50%;
   transform: translate(-50%, 0); */
 
+  margin-left: 518px;
+  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
+
+  width: calc(100vw - var(--left-marg) - var(--right-marg));
+  height: calc(100vh - var(--top-marg) - var(--site-margin));
+
   display: flex;
-
-  --horiz-marg: calc(var(--comic-title-width) + 24px);
-  --vert-marg: calc(var(--comic-title-height) + 24px);
-
-  margin: var(--vert-marg) var(--horiz-marg);
-  margin-bottom: var(--site-margin);
-
-  width: calc(100vw - (var(--horiz-marg) * 2));
-  height: calc(100vh - (var(--vert-margin) - var(--margin-bottom)));
 }
 
 .chaptertitle {
