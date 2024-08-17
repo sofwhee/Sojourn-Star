@@ -2,17 +2,28 @@
 
 <%= stylesheet_link_tag "pages/page" %>
 
-<div id="posteddate">
-  <li>Posted</li>
-  <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
+<div id="cpage">
+
+  <ul id="sitenavigation">
+    <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
+    <li><a class="linktext">-Ars Arcanum-</a></li>
+    <li><a class="linktext">-Shop-</a></li>
+  </ul>
+
+
+  <div id="posteddate">
+    <li>Posted</li>
+    <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
+  </div>
+
+  <%= render "shared/page_image" %>
+  <%= render "shared/edit_button" %>
+
+  <div id="pageandchapter">
+    <li id="pagenum"><%= "Page #{@page.page_number}"%> </li>
+    <li><%= "Chapter #{@page.chapter.chapter_number}" %> </li>
+  </div>
+
+  <%= render "shared/comic_navigation" %>
+
 </div>
-
-<%= render "shared/page_image" %>
-<%= render "shared/edit_button" %>
-
-<div id="pageandchapter">
-  <li id="pagenum"><%= "Page #{@page.page_number}"%> </li>
-  <li><%= "Chapter #{@page.chapter.chapter_number}" %> </li>
-</div>
-
-<%= render "shared/comic_navigation" %>

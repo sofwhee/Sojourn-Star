@@ -68,6 +68,8 @@ a:hover {
 :root {
   --site-margin: 12px;
   --site-margin-mobile: 52px;
+
+  --site-margin-doubled: calc(var(--site-margin) * 2);
 }
 
 /* Positioning */
@@ -101,6 +103,7 @@ a:hover {
 
 #sitenavigation {
   left: -151px;
+  margin-top: var(--site-margin-doubled);
 }
 
 .linktext {
@@ -162,6 +165,7 @@ a:hover {
 }
 
 #socials {
+  margin-top: var(--site-margin-doubled);
   right: var(--site-margin);
 }
 
@@ -171,12 +175,6 @@ a:hover {
 }
 
 @media screen and (max-width: 1620px) {
-  #sitenavigation {
-    top: 146px;
-  }
-}
-
-@media screen and (max-width: 1500px) {
   #comictitle img {
     width: 180px;
   }
@@ -184,7 +182,7 @@ a:hover {
 
 /* mobile */
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1330px) {
     
   #fullwrap, #comictitle, #sitenavigation, #cpage, #comicnavigation, #posteddate, #pageandchapter, #socials {
     position: static;

@@ -21,17 +21,7 @@
 
       <%= link_to_if Page.first, image_tag("titlecard.png"), home_index_path, id: "comictitle" %>
 
-      <div id="cpage">
-
-        <ul id="sitenavigation">
-          <li><%= link_to "-Archive-", pages_path, class: "linktext" %></li>
-          <li><a class="linktext">-Ars Arcanum-</a></li>
-          <li><a class="linktext">-Shop-</a></li>
-        </ul>
-
-        <%= yield %>
-      
-      </div>
+      <%= yield %>
       
       <div id="socials">
         <li><a class="linktext" id="patreon">Patreon</a></li>

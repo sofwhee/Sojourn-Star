@@ -1,9 +1,16 @@
 <%= stylesheet_link_tag "archive/archive" %>
 
-<ol class="chapterslist">
+<%= render "shared/site_navigation" %>
+
+<div id="new">
+<%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %>
+<%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %>
+</div>
+
+<ol id="chapterslist">
 <% @chapters.sorted.each do |chapter| %>
   <li class="chaptertitle"><%= "#{chapter.name}" %>
-    <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "editbutton"){} %>
+    <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "adminbutton"){} %>
 
     <ol class="chaptergallery">
     <% chapter.pages.sorted.each do |page| %>
@@ -12,10 +19,18 @@
 
         <li class="galleryitem">
           <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %>
+          <br>
           <%= link_to page.page_number, page %>
-          <%= tag.p 'Draft' if page.draft? %>
-          <%= tag.p 'Scheduled' if page.scheduled? %>
-          <%= link_to "Edit", edit_page_path(page), class: "editbutton" %>
+          <br>
+          <% if page.draft? %>
+            <p>'Draft'</p>
+            <br>
+          <% elsif page.scheduled? %>
+            <p>'Scheduled'</p>
+            <br>
+          <% else %>
+            <%= link_to "Edit", edit_page_path(page), class: "adminbutton" %>
+          <% end%>
         </li>
     
       <% else %>
