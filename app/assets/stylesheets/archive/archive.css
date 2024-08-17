@@ -147,6 +147,9 @@ a:hover {
 
   display: flex; */
 
+  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
+  margin-right: var(--site-margin-doubled);
+  margin-left: var(--site-margin-doubled);
   flex-basis: 100%;
 }
 
@@ -200,7 +203,7 @@ a:hover {
 }
 
 #socials {
-  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
+  margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
   right: var(--site-margin);
   flex: 0 0 auto;
 }
