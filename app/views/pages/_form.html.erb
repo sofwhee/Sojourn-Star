@@ -17,7 +17,7 @@
 
   <div>
     <%= form.label :page_number %><br>
-    <%= form.text_area :page_number %><br>
+    <%= form.text_area :page_number, value: @page.last.page_number %><br>
     <% page.errors.full_messages_for(:page_number).each do |message| %>
       <div><%= message %></div>
     <% end %>
