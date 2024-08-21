@@ -3,7 +3,6 @@ class Page < ApplicationRecord
   has_one_attached :page_image
   extend FriendlyId
   friendly_id :page_number, use: :slugged
-
   validates :chapter, :page_number, :page_image, presence: true
 
   scope :sorted, -> { order(page_number: :asc) }

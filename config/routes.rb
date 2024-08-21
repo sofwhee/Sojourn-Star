@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins, only: :sessions, controllers: { registrations: "registrations" }
 
   resources :pages
+  # get "/pages/:page_number", to: "pages#show"
   resources :home, only: [:index]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

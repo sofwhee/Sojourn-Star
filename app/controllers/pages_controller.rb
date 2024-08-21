@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.friendly.find(params[:id])
   end
 
   def new
@@ -33,13 +32,12 @@ class PagesController < ApplicationController
   
   def edit
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
-    @page = Page.friendly.find(params[:id])
   end
 
   def update
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
-    @page = Page.friendly.find(params[:id])
 
+    @page.slug = nil if @page.page_number != params[:page_number]
     if @page.update(page_params)
       # bump_all_pages(@page.id, @page.page_number)
       redirect_to pages_path
@@ -49,10 +47,9 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page = Page.friendly.find(params[:id])
     @page.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to pages_path, status: :see_other
   end
   
   private

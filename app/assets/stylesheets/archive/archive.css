@@ -72,6 +72,8 @@ a:hover {
   --comic-title-width: 330px;
   --comic-title-height: 125px;
   --site-nav-width: 116px;
+
+  /* mobile */
 }
 
 /* Positioning */
@@ -107,7 +109,6 @@ a:hover {
 }
 
 #sitenavigation {
-  margin-left: calc(var(--comic-title-width) + var(--site-margin-doubled));
 }
 
 .linktext {
@@ -125,14 +126,13 @@ a:hover {
   border-color:rgba(255, 255, 255, 0.116);
   padding: 20px 7px 20px;
   line-height: 3;
-  margin-top: var(--site-margin-doubled);
+  margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
+  flex: 0 0 auto;
 }
 
 #new {
-  position: absolute;
   display: flex;
-  top: -60px;
-  left: 50%;
+  gap: 16px;
 }
 
 #chapterslist {
@@ -147,7 +147,7 @@ a:hover {
 
   display: flex; */
 
-  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
+  margin-top: calc(var(--comic-title-height) + var(--site-margin));
   margin-right: var(--site-margin-doubled);
   margin-left: var(--site-margin-doubled);
   flex-basis: 100%;
@@ -204,7 +204,6 @@ a:hover {
 
 #socials {
   margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
-  right: var(--site-margin);
   flex: 0 0 auto;
 }
 
@@ -212,12 +211,12 @@ a:hover {
   /* right: var(--site-margin);
   bottom: var(--site-margin); */
 }
-
+/* 
 @media screen and (max-width: 1620px) {
   #comictitle img {
-    width: 180px;
+    width: calc(var(--comic-title-width) / 2);
   }
-}
+} */
 
 /* mobile */
 

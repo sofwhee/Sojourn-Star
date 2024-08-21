@@ -1,15 +1,14 @@
 <%= stylesheet_link_tag "archive/archive" %>
 
-<% content_for :with_title do %>
-  <%= render "shared/site_navigation" %>
-<% end %>
-
-<div id="new">
-<%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %>
-<%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %>
-</div>
+<%= render "shared/site_navigation" %>
 
 <ol id="chapterslist">
+
+  <ul id="new">
+    <li><%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %></li>
+    <li><%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %></li>
+  </ul>
+
 <% @chapters.sorted.each do |chapter| %>
   <li class="chaptertitle"><%= "#{chapter.name}" %>
     <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "adminbutton"){} %>
