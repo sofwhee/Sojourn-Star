@@ -9,7 +9,7 @@
 
   <div>
     <%= form.label :chapter_id %><br>
-    <%= form.select :chapter_id, @chapter_options, selected: Chapter.last.id %>
+    <%= form.select :chapter_id, @chapter_options %>
     <% page.errors.full_messages_for(:chapter_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
