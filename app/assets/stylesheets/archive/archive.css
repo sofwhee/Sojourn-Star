@@ -104,6 +104,11 @@ a:hover {
   padding: var(--site-margin);
 }
 
+#logout {
+  position: fixed;
+  bottom: 12px;
+}
+
 #comictitle img {
   width: var(--comic-title-width);
 }
@@ -133,6 +138,7 @@ a:hover {
 #new {
   display: flex;
   gap: 16px;
+  margin-left: 16px;
 }
 
 #chapterslist {
@@ -160,6 +166,8 @@ a:hover {
 .chaptergallery {
   display: flex;
   padding: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .galleryitem {

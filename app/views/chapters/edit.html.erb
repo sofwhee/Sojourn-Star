@@ -4,4 +4,5 @@
 
 <br>
 
+<%= link_to "Destroy", chapter_path(@chapter), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <%= link_to "Back to archive", pages_path %>
