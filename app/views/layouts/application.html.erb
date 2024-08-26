@@ -29,7 +29,9 @@
       <% if admin_signed_in? %>
         <%= link_to "Log out", destroy_admin_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "adminbutton", id: "logout" %>
       <% end %>
+      
     </div>
+
   </body>
 
 </html>

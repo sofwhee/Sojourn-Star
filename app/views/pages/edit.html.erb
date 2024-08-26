@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "admin/login" %>
+
 <h1>Edit page</h1>
 
-<%= render "edit_form", page: @page%>
-<%= link_to "Destroy", page_path(@page), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <%= link_to "Back to archive", pages_path %>
+
+<%= render "edit_form", page: @page%>

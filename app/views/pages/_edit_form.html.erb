@@ -23,15 +23,12 @@
     <% end %>
   </div>
 
-  <div> 
-    <%= form.submit "Draft" %>
-  </div>
-
   <div>
     <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %>
-  </div>
-    
-  <div>
     <%= form.submit "Publish" %>
+    <%= form.submit "Draft" %>
   </div>
+  
+  <br>  <br>  <br>
+  <%= link_to "Destroy", page_path(@page), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
