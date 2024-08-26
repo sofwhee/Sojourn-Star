@@ -104,11 +104,6 @@ a:hover {
   padding: var(--site-margin);
 }
 
-#logout {
-  position: fixed;
-  bottom: 12px;
-}
-
 #comictitle img {
   width: var(--comic-title-width);
 }
