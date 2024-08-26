@@ -16,6 +16,8 @@ class PagesController < ApplicationController
   end
 
   def create
+    @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
+
     if params[:commit] == "Draft"
       params[:page].delete_if{ |key, value| key.match(/^published_at/) }
       params[:page][:published_at] == nil

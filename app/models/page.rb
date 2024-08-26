@@ -4,6 +4,7 @@ class Page < ApplicationRecord
   extend FriendlyId
   friendly_id :page_number, use: :slugged
   validates :chapter, :page_number, :page_image, presence: true
+  validates :page_number, uniqueness: true
 
   scope :sorted, -> { order(page_number: :asc) }
   scope :draft, -> { where(published_at: nil) }
