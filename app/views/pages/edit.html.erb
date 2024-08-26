@@ -5,3 +5,6 @@
 <%= link_to "Back to archive", pages_path %>
 
 <%= render "edit_form", page: @page%>
+
+<br><br><br>
+<%= link_to "Destroy", page_path(@page), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
