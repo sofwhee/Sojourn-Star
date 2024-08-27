@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :chapters
-  devise_for :admins, only: :sessions, controllers: { registrations: "registrations" }
+  
+  devise_for :admins, skip: :registrations, controllers: { registrations: "registrations" }
+  
+  as :admin do
+    get 'admins/edit', to: 'devise/registrations#edit', as: 'edit_admin_registration'
+    patch 'admins', to: 'devise/registrations#update', as: 'admin_registration'
+  end
 
   resources :pages
   # get "/pages/:page_number", to: "pages#show"

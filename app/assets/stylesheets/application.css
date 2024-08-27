@@ -13,7 +13,7 @@
  *= require_self
  */
 
- #logout {
+#logout {
   position: fixed;
   bottom: 12px;
 }

@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag %>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
@@ -27,7 +29,10 @@
       <%= yield %>
 
       <% if admin_signed_in? %>
-        <%= link_to "Log out", destroy_admin_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "adminbutton", id: "logout" %>
+        <div id="logout">
+        <%= link_to "Log out", destroy_admin_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "adminbutton" %>
+        <%= link_to "Change your password", edit_admin_registration_path, class: "adminbutton" %>
+        </div>
       <% end %>
       
     </div>

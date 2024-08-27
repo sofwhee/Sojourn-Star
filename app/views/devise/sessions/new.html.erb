@@ -1,12 +1,12 @@
-<%= stylesheet_link_tag "admin/login" %>
+<%= stylesheet_link_tag "admin/admin" %>
 
 <% unless admin_signed_in? %>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_with(model: @admin, url: admin_session_path) do |f|%>
 
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      <% resource.errors.full_messages_for(:email).each do |message| %>
+      <% @admin.errors.full_messages_for(:email).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
@@ -14,7 +14,7 @@
     <div class="field">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "current-password" %>
-      <% resource.errors.full_messages_for(:password).each do |message| %>
+      <% @admin.errors.full_messages_for(:password).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
