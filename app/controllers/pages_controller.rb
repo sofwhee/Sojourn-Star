@@ -41,7 +41,7 @@ class PagesController < ApplicationController
 
     @page.slug = nil if @page.page_number != params[:page_number]
     if @page.update(page_params)
-      # bump_all_pages(@page.id, @page.page_number)
+      bump_all_pages(@page.id, @page.page_number)
       redirect_to pages_path
     else  
       render :edit, status: :unprocessable_entity

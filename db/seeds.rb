@@ -9,5 +9,5 @@
 #   end
 
 unless Admin.exists?
-  Admin.create(email: 'soup@a.com', password: 'soupsoup', password_confirmation: 'soupsoup')
+  Admin.create!(email: 'sofiamsola@outlook.com', password: 'demanga123', password_confirmation: 'demanga123')
 end

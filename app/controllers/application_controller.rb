@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   #   render_error_page(status: 403, text: 'Forbidden')
   # end
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   private
 
   def render_error_page(status:, text:, template: 'errors/routing')
@@ -28,4 +30,10 @@ class ApplicationController < ActionController::Base
   #     raise ApplicationController::NotAuthorized
   #   end
   # end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:otp_attempt])
+  end
 end
