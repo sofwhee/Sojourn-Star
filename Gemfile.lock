@@ -122,11 +122,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-two-factor (5.1.0)
-      activesupport (~> 7.0)
-      devise (~> 4.0)
-      railties (~> 7.0)
-      rotp (~> 6.0)
     drb (2.2.1)
     error_highlight (0.6.0)
     erubi (1.13.0)
@@ -247,7 +242,6 @@ GEM
       railties (>= 5.2)
     rexml (3.3.0)
       strscan
-    rotp (6.3.0)
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     rubyzip (2.3.2)
@@ -307,7 +301,6 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
-  devise-two-factor
   error_highlight (>= 0.4.0)
   friendly_id (~> 5.5.0)
   image_processing (~> 1.2)
