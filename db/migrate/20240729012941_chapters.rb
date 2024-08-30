@@ -3,4 +3,5 @@ class Chapters < ActiveRecord::Migration[7.1]
     create_table :chapters do |t|
       t.string     :name
     end
+  end
 end
