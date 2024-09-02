@@ -1,7 +1,21 @@
-<% if Chapter.any? %>
-  <% if Chapter.last.pages.sorted.first %>
-    <% @page = Chapter.last.pages.sorted.first %>
-  <% end %>
+<% Chapter.create!(name: "Sample", chapter_number: 1) if Chapter.none? %>
+<% if Page.none? %>
+  <%
+    sample_page = Page.new(
+      created_at: Time.current, 
+      updated_at: Time.current, 
+      page_number: 1, 
+      published_at: Time.current, 
+      chapter_id: Chapter.last.id, 
+      slug: "1")
+
+    sample_page.page_image.attach(
+      io: File.open('app/assets/images/Testercomicpage.png'), 
+      filename: 'file.png', 
+      content_type: 'image/png')
+
+    sample_page.save! %>
 <% end %>
 
+<% @page = Chapter.last.pages.first%>
 <%= render "shared/show_page" %>

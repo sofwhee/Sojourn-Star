@@ -10,9 +10,9 @@
 
 unless Admin.exists?
   Admin.create!(
-    email: 'sofiamsola@outlook.com', 
-    password: 'demanga123', 
-    password_confirmation: 'demanga123')
+    email: 'Phoebe.scb@gmail.com', 
+    password: 'password', 
+    password_confirmation: 'password')
 end
 
 unless Chapter.exists?
