@@ -33,9 +33,9 @@
           <% elsif page.scheduled? %>
             <p>'Scheduled'</p> <br>
             
-          <% else %>
-            <%= link_to "Edit", edit_page_path(page), class: "adminbutton" %>
-          <% end%>
+          <% end %>
+          
+          <%= link_to "Edit", edit_page_path(page), class: "adminbutton" %>
 
         </li>
     

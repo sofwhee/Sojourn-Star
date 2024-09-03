@@ -10,6 +10,7 @@ class Page < ApplicationRecord
   scope :draft, -> { where(published_at: nil) }
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :scheduled, -> { where("published_at > ?", Time.current) }
+  scope :published_sorted, -> { where("published_at <= ?", Time.current).order(page_number: :asc) }
 
   def draft?
     published_at.nil?
@@ -24,19 +25,19 @@ class Page < ApplicationRecord
   end
 
   def next
-    self.class.sorted.where("page_number > ?", page_number).first
+    self.class.published_sorted.where("page_number > ?", page_number).first
   end
 
   def previous
-    self.class.sorted.where("page_number < ?", page_number).last
+    self.class.published_sorted.where("page_number < ?", page_number).last
   end
 
   def first
-    self.class.sorted.first
+    self.class.published_sorted.first
   end
 
   def last
-    self.class.sorted.last
+    self.class.published_sorted.last
   end
 end
 
