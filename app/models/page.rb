@@ -10,7 +10,7 @@ class Page < ApplicationRecord
   scope :draft, -> { where(published_at: nil) }
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :scheduled, -> { where("published_at > ?", Time.current) }
-  scope :published_sorted, -> { where("published_at <= ?", Time.current).order(page_number: :asc) }
+  scope :published_sorted, -> { published.sorted }
 
   def draft?
     published_at.nil?
