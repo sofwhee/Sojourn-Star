@@ -130,6 +130,8 @@ a:hover {
 
 #cimage {
   max-height: 95vh;
+  width: auto;
+  object-fit: contain;
 }
 
 #comicnavigation {
@@ -139,8 +141,6 @@ a:hover {
 
 #comicnavigation li {
   line-height: 4;
-  height: 92px;
-  width: 60px;
 }
 
 .navbutton img {
@@ -201,13 +201,17 @@ a:hover {
     padding: 0;
   }
 
+  #titlewrap {
+    text-align: center;
+  }
+
   #comictitle {
-    font-size: 0;
     margin: var(--site-margin-mobile) 0px var(--site-margin-mobile) 0px;
   }
 
   #comictitle img {
-    width: 400px;
+    width: auto;
+    max-width: 75%;
   }
   
   #cpage {
@@ -225,8 +229,9 @@ a:hover {
   #comicnavigation {
     order: 2;
     display: flex;
-    gap: 60px;
     margin: 26px;
+    width: 65%;
+    justify-content: space-between;
   }
 
   a.navbutton {

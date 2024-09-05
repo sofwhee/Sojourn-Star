@@ -72,19 +72,7 @@ a:hover {
   --comic-title-width: 330px;
   --comic-title-height: 125px;
   --site-nav-width: 116px;
-
-  /* mobile */
 }
-
-/* Positioning */
-
-  /* #fullwrap {
-    position: relative;
-  }
-
-  #comictitle, #cpage, #sitenavigation, #comicnavigation, #posteddate, #pageandchapter, #socials, #new, #chapterslist {
-    position: absolute;
-  } */
 
 /* ------ */
 
@@ -106,9 +94,6 @@ a:hover {
 
 #comictitle img {
   width: var(--comic-title-width);
-}
-
-#sitenavigation {
 }
 
 .linktext {
@@ -137,20 +122,9 @@ a:hover {
 }
 
 #chapterslist {
-  /* left: 50%;
-  transform: translate(-50%, 0); */
-
-  /* margin-left: 518px;
-  margin-top: calc(var(--comic-title-height) + var(--site-margin-doubled));
-
-  width: calc(100vw - var(--left-marg) - var(--right-marg));
-  height: calc(100vh - var(--top-marg) - var(--site-margin));
-
-  display: flex; */
-
   margin-top: calc(var(--comic-title-height) + var(--site-margin));
-  margin-right: var(--site-margin-doubled);
-  margin-left: var(--site-margin-doubled);
+  margin-right: calc(var(--site-margin-doubled) * 2);
+  margin-left: calc(var(--site-margin-doubled) * 2);
   flex-basis: 100%;
 }
 
@@ -169,63 +143,9 @@ a:hover {
   text-align: center;
 }
 
-#cimage {
-  max-height: 95vh;
-}
-
-#comicnavigation {
-  top: 26px;
-  right: -76px;
-}
-
-#comicnavigation li {
-  line-height: 4;
-  height: 92px;
-  width: 60px;
-}
-
-.navbutton img {
-  width: 60px; 
-}
-
-#posteddate li, #pageandchapter li {
-  color:rgb(165, 165, 165);
-}
-
-#posteddate {
-  bottom: 12px;
-  text-align: right;
-  left: 0px;
-  transform: translatex(-116%)
-}
-
-#pageandchapter {
-  bottom: 12px;
-  right: 0px;
-  transform: translatex(116%)
-}
-
-#socials {
-  margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
-  flex: 0 0 auto;
-}
-
-.adminbutton {
-  /* right: var(--site-margin);
-  bottom: var(--site-margin); */
-}
-/* 
-@media screen and (max-width: 1620px) {
-  #comictitle img {
-    width: calc(var(--comic-title-width) / 2);
-  }
-} */
-
-/* mobile */
-
 @media screen and (max-width: 1250px) {
     
-  #fullwrap, #comictitle, #sitenavigation, #cpage, #comicnavigation, #posteddate, #pageandchapter, #socials {
+  #fullwrap, #comictitle, #sitenavigation, #socials {
     position: static;
     transform: none;
   }
@@ -247,52 +167,13 @@ a:hover {
     margin: var(--site-margin-mobile) 0px var(--site-margin-mobile) 0px;
   }
 
-  #comictitle img {
-    width: 400px;
-  }
-  
-  #cpage {
+  .chaptergallery {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
 
-  #cimage {
-    order: 1;
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  #comicnavigation {
-    order: 2;
-    display: flex;
-    gap: 60px;
-    margin: 26px;
-  }
-
-  a.navbutton {
-    display: flex;
-    max-width: 100px;
-  }
-    
-  .navbutton img {
-    width: initial;
-    max-width: 100%; 
-  }
-
-  #pageandchapter {
-    order: 3;
-    text-align: center;
-  }
-
-  #posteddate {
-    order: 4;
-  }
-
-  #posteddate li {
-    display: inline;
-  }
-  
   #sitenavigation {
     order: 5;
   }
@@ -315,14 +196,6 @@ a:hover {
     width: 90vw;
     height: auto;
     background:#2b2b2b;
-  }
-  
-  #pageandchapter {
-
-  }
-  
-  #socials {
-
   }
 
   .adminbutton {
