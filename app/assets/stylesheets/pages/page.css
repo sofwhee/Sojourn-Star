@@ -140,11 +140,10 @@ a:hover {
 }
 
 #comicnavigation li {
-  line-height: 4;
+  height: 60px;
 }
 
 .navbutton img {
-  width: 60px; 
 }
 
 #posteddate li, #pageandchapter li {
