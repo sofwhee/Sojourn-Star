@@ -92,16 +92,6 @@ a:hover {
   padding: var(--site-margin);
 }
 
-#comictitle img {
-  width: var(--comic-title-width);
-}
-
-.linktext {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 #sitenavigation, #socials {
   text-align: center;
   height: 400px;
