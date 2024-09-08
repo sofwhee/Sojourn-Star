@@ -201,13 +201,11 @@ a:hover {
     text-align: center;
   }
 
-  #comictitle {
-    margin: var(--site-margin-mobile) 0px var(--site-margin-mobile) 0px;
-  }
-
   #comictitle img {
     width: auto;
     max-width: 40%;
+    margin-top: var(--site-margin);
+    margin-bottom: var(--site-margin);
   }
   
   #cpage {
@@ -284,11 +282,7 @@ a:hover {
   }
 
   #logout {
-    display: flex;
-    flex-direction: column;
     position: static;
-    top: 125px;
-    left: 24px;
   }
   
 }

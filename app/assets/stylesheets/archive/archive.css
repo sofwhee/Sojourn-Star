@@ -141,28 +141,44 @@ a:hover {
 
 }
 
-@media screen and (max-width: 1250px) {
-    
-  #fullwrap, #comictitle, #sitenavigation, #socials {
-    position: static;
-    transform: none;
-  }
+#logout {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 125px;
+  left: 24px;
+}
 
-  a {
-    font-size: 30px;
-  }
+@media screen and (max-width: 1250px) {
 
   #fullwrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: content-box;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #titlewrap {
+    text-align: center;
   }
 
   #comictitle {
-    font-size: 0;
     margin: var(--site-margin-mobile) 0px var(--site-margin-mobile) 0px;
+  }
+
+  #comictitle img {
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    margin-top: var(--site-margin);
+    margin-bottom: var(--site-margin);
+  }
+
+  #chapterslist {
+    width: 90vw;
+    margin: 0;
   }
 
   .chaptergallery {
@@ -171,15 +187,16 @@ a:hover {
     flex-wrap: wrap;
     gap: 16px;
   }
-
+  
   #sitenavigation {
     order: 5;
   }
   
   #socials {
     order: 6;
+    margin-top: 6px;
   }
-  
+
   #sitenavigation, #socials {
     display: flex;
     flex-direction: column;
@@ -187,6 +204,7 @@ a:hover {
     border: none;
     height: 100%;
     gap: 6px;
+    padding: 0px;
   }
   
   .linktext {
@@ -196,10 +214,10 @@ a:hover {
     background:#2b2b2b;
   }
 
-  .adminbutton {
+  #logout {
     position: static;
-    order: 7;
-    margin: var(--site-margin-mobile) 0px var(--site-margin-mobile) 0px;
+    top: 125px;
+    left: 24px;
   }
   
 }
