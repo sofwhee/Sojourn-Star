@@ -69,7 +69,7 @@ a:hover {
   --site-margin: 12px;
   --site-margin-mobile: 52px;
   --site-margin-doubled: calc(var(--site-margin) * 2);
-  --comic-title-width: 330px;
+  --comic-title-width: 250px;
   --comic-title-height: 125px;
   --site-nav-width: 116px;
 }
@@ -141,6 +141,14 @@ a:hover {
 
 .galleryitem {
   text-align: center;
+}
+
+.galleryitem img {
+  width: 100%;
+}
+
+.comicnav {
+
 }
 
 @media screen and (max-width: 1250px) {

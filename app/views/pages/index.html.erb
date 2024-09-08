@@ -21,7 +21,7 @@
 
         <li class="galleryitem">
 
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %>
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), size: "100x100"), page %>
           <br>
           
           <%= link_to page.page_number, page %>
@@ -44,7 +44,7 @@
         <% next if page.invalid? || page.draft? || page.scheduled? %>
 
         <li class="galleryitem">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100])), page %>
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), size: "100x100"), page %>
           <br>
           <%= link_to page.page_number, page %>
         </li>
