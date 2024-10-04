@@ -10,7 +10,9 @@
   </ul>
 
 <% @chapters.sorted.each do |chapter| %>
-  <li class="chaptertitle"><%= "#{chapter.name}" %>
+  <a class="chaptertitle" onclick=<%="slideToggle(#{chapter.name})"%>><%="#{chapter.name}"%></a>
+  
+  <div class="chaptergallerytoggle" id=<%="#{chapter.name}"%>>
 
     <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "adminbutton"){} %>
 
@@ -50,10 +52,12 @@
         </li>
 
       <% end %>
-    <% end %>
-    </ol>
-  </li>
+      <% end %>    
+      </ol>
+    </div>
 <% end %>
 </ol>
 
 <%= render "shared/socials"%>
+
+<%= javascript_include_tag "archive", defer: true %>

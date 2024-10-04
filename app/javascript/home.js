@@ -1,4 +1,0 @@
-import "@hotwired/turbo-rails"
-
-
-
