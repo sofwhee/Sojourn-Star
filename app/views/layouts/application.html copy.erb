@@ -22,6 +22,19 @@
 
     <div id="fullwrap">
 
+      <% if admin_signed_in? %>
+        <div id="logout">
+        <%= link_to "Log out", destroy_admin_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "adminbutton" %>
+        <%= link_to "Change your password", edit_admin_registration_path, class: "adminbutton" %>
+        <%= yield :admin_options %>
+        </div>
+      <% end %>
+
+      <div id="titlewrap">
+      <%= render "shared/comic_title" %>
+      <%= yield :with_title %>
+      </div>
+
       <p id="notice"><%= notice %></p>
       <p id="alert"><%= alert %></p>
       

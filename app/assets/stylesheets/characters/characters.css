@@ -77,9 +77,6 @@ a:hover {
 /* ------ */
 
 #fullwrap {
-  display: flex;
-  justify-content: space-between;
-
   min-height: 100dvh;
   max-width: 100%;
   box-sizing: border-box;
@@ -102,35 +99,29 @@ a:hover {
   padding: 20px 7px 20px;
   line-height: 3;
   margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
-  flex: 0 0 auto;
 }
 
-#new {
-  display: flex;
-  gap: 16px;
-  margin-left: 16px;
+#sitenavigation {
+  float: left;
 }
 
-#chapterslist {
-  margin-top: calc(var(--comic-title-height) + var(--site-margin));
-  margin-right: calc(var(--site-margin-doubled) * 2);
-  margin-left: calc(var(--site-margin-doubled) * 2);
-  flex-basis: 100%;
+#charinfopage {
+  width: 40vw;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.charinfocontainer {
+  padding: 25px;
+}
+
+.charinfo {
+  width: auto;
+  max-height: 92vh;
 }
 
 .chaptertitle {
   font-size: 36px;
-}
-
-.chaptergallerytoggle {
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  overflow-y: hidden;
-}
-
-.charinfo {
-  height: auto;
-  width: 100%;
 }
 
 #logout {
