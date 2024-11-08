@@ -122,29 +122,15 @@ a:hover {
   font-size: 36px;
 }
 
-.chaptergallerytoggle{
+.chaptergallerytoggle {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   overflow-y: hidden;
 }
 
-.chaptergallery {
-  display: flex;
-  padding: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.galleryitem {
-  text-align: center;
-}
-
-.galleryitem img {
+.charinfo {
+  height: auto;
   width: 100%;
-}
-
-.comicnav {
-
 }
 
 #logout {
