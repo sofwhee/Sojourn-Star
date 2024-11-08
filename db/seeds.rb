@@ -10,7 +10,8 @@
 
 unless Admin.exists?
   Admin.create!(
-    email: 'Phoebe.scb@gmail.com', 
+    # email: 'Phoebe.scb@gmail.com', 
+    email: 'sofiamsola@outlook.com',
     password: 'password', 
     password_confirmation: 'password')
 end

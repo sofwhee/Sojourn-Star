@@ -26,6 +26,10 @@
       </div>
     <% end %>
 
+    <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+      <%= link_to "Didn't receive unlock instructions?", new_admin_unlock_path() %><br />
+    <% end %>
+
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
