@@ -63,27 +63,73 @@ a:hover {
 
 @import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
-/* variables */
+/* global variables */
 
 :root {
   --site-margin: 2vh;
   --site-margin-mobile: 52px;
   --site-margin-doubled: calc(var(--site-margin) * 2);
-  --comic-title-width: 250px;
-  --comic-title-height: 125px;
-  --site-nav-width: 116px;
 }
 
-/* ------ */
+/* content */
+
+:root {
+  --content-height: calc(100vh - (var(--site-margin) * 2));
+  --content-width: 66vw;
+}
 
 #fullwrap {
-  width: 65vw;
-  height: 100vh;
+  height: var(--content-height);
+  width: var(--content-width);
+  position: relative;
+  top: var(--site-margin);
+  left: 50%;
+  transform: translate(-50%);
+  background: rgb(47, 47, 99);
+}
+
+.charinfo {
+  /* after transition */
+  height: 96vh;
+  max-width: 100%;
   position: relative;
   left: 50%;
   transform: translate(-50%);
-  margin: var(--site-margin);
-  background: rgb(47, 47, 99);
+}
+
+/* comic title */
+
+:root{
+  --comic-title-width: 250px;
+  --comic-title-height: 125px;
+}
+
+#comictitle {
+  position: absolute;
+  top: var(--site-margin);;
+  left: var(--site-margin);;
+}
+
+a img {
+  vertical-align: bottom;
+  height: auto;
+  width: 14.5vw;
+}
+
+/* admin tools */
+
+#logout {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 125px;
+  left: 24px;
+}
+
+/* sidebars */
+
+:root {
+  --sidebar-top-margin: calc(var(--comic-title-height) + (var(--site-margin) * 3))
 }
 
 #sitenavigation, #socials {
@@ -93,48 +139,19 @@ a:hover {
   border: solid 2px;
   border-radius: 2px;
   border-color:rgba(255, 255, 255, 0.116);
-  padding: 20px 7px 20px;
+  padding: 20px 8px;
   line-height: 3;
-  margin-top: calc(var(--comic-title-height) + (var(--site-margin) * 3));
+  margin-top: var(--sidebar-top-margin);
 }
 
 #sitenavigation {
-  float: left;
-}
-
-.charinfoimgcontainer {
-}
-
-.charinfo {
-  /* after transition */
-  height: 97.5vh;
-  max-width: 100%;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.chaptertitle {
-  font-size: 36px;
-}
-
-#comictitle {
   position: absolute;
-  margin: var(--site-margin);
+  left: 4vw;
 }
 
-a img {
-  vertical-align: bottom;
-  height: auto;
-  width: 16vw;
-}
-
-#logout {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 125px;
-  left: 24px;
+#socials {
+  position: absolute;
+  right: 4vw;
 }
 
 @media screen and (max-width: 1250px) {
