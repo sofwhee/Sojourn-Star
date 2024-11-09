@@ -131,26 +131,26 @@ html, body {
 
 #overlayimg {
   position: fixed;
-  top: var(--site-margin);
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   height: 96vh;
   max-width: 100%;
 
-  /* animation-name: reveal;
-  animation-duration: 0.5s; */
+  animation-name: reveal;
+  animation-duration: 0.5s;
 }
-/* 
+
 @keyframes reveal {
   from {
-    height: 85vh;
+    height: 80vh;
     opacity: 0%;
   }
   to {
     height: 96vh;
     opacity: 100%;
   }
-} */
+}
 
 /* comic title */
 
