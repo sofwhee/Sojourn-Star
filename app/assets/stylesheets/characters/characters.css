@@ -74,41 +74,38 @@ html, body {
   --site-margin: 2vh;
   --site-margin-mobile: 52px;
   --site-margin-doubled: calc(var(--site-margin) * 2);
+
+  --comic-title-height: 150px;
 }
 
 /* content */
 
-:root {
-  --content-height: calc(100vh - (var(--site-margin) * 2));
-  --content-width: 66vw;
-}
-
 #fullwrap {
   box-sizing: border-box;
-  height: var(--content-height);
-  width: var(--content-width);
+  width: 66vw;
   padding: 15px;
   position: relative;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%);
-  background: rgb(47, 47, 99);
-  top: var(--site-margin);
+  transform: translate(-50%, -50%);
+}
+
+.charinfoimgcontainer {
+  height: 250px;
 }
 
 .charinfo {
   position: relative;
-  height: 250px;
+  height: 100%;
   max-width: 100%;
   opacity: 50%;
   left: 0%;
+
+  transition: opacity 0.3s;
 }
 
 .charinfo:hover {
   opacity: 100%;
-  /* height: 96vh;
-  max-width: 100%;
-  left: 50%;
-  transform: translate(-50%); */
 }
 
 .charinfocontainer {
@@ -154,21 +151,17 @@ html, body {
 
 /* comic title */
 
-:root{
-  --comic-title-width: 250px;
-  --comic-title-height: 125px;
-}
-
 #comictitle {
   position: absolute;
-  top: var(--site-margin);;
-  left: var(--site-margin);;
+  top: var(--site-margin);
+  left: 50%;
+  transform: translate(-50%);
 }
 
 a img {
   vertical-align: bottom;
-  height: auto;
-  width: 14.5vw;
+  height: var(--comic-title-height);
+  width: auto;
 }
 
 /* admin tools */
@@ -184,7 +177,7 @@ a img {
 /* sidebars */
 
 :root {
-  --sidebar-top-margin: calc(var(--comic-title-height) + (var(--site-margin) * 3))
+  --sidebar-top-margin: calc(var(--comic-title-height) + (var(--site-margin) * 6))
 }
 
 #sitenavigation, #socials {
