@@ -74,14 +74,16 @@ body {
   background-image: linear-gradient(to left, rgb(8, 8, 8), transparent);
 }
 
-a:hover {
-  color:rgb(219, 210, 86)
-}
-
 /* text */
 
 .jim-nightshade-regular {
   font-family: "Jim Nightshade", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caesar-dressing-regular {
+  font-family: "Caesar Dressing", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -214,11 +216,6 @@ a img {
   padding: 6px;
   margin-top: var(--sidebar-top-margin);
 
-  font-family: "Jim Nightshade", serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 26px;
-
   display: flex;
   flex-direction: column;
 
@@ -249,11 +246,16 @@ a img {
   border-radius: 8px;
 
   transition: opacity 0.3s;
+  text-shadow: #000000 1px 0 10px;
+
+  font-family: "Caesar Dressing", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .sitelink:hover {
   opacity: 100%;
-  color: rgb(173, 122, 28);
+  color: rgb(255, 222, 78);
 }
 
 #archivelink {
@@ -273,6 +275,8 @@ a img {
   background-position: center;
   background-size: 83%;
 }
+
+
 /* 
 @media screen and (max-width: 1250px) {
 
