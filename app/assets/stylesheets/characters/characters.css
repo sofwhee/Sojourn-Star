@@ -58,20 +58,20 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(#232369, black);
+  background-image: linear-gradient(#373759, black);
 }
 
 #edgeleft, #edgeright {
   position: fixed;
   z-index: -1;
   height: 100vh;
-  width: 20vw;
-  background-image: linear-gradient(to right, rgb(8, 8, 8), transparent);
+  width: 39vw;
+  background-image: linear-gradient(to right, rgb(8 8 8 / 58%), transparent);
 }
 
 #edgeright {
   right: 0%;
-  background-image: linear-gradient(to left, rgb(8, 8, 8), transparent);
+  background-image: linear-gradient(to left, rgb(8 8 8 / 58%), transparent);
 }
 
 /* text */
