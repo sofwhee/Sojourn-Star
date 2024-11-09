@@ -19,10 +19,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 18px;
-  font-family: "Kalam", cursive;
-  font-weight: 400;
-  font-style: normal;
 	vertical-align: baseline;
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -32,10 +28,6 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-body {
-	/* line-height: 1; */
-  background:#000000;
 }
 ol, ul {
 	list-style: none;
@@ -55,9 +47,6 @@ table {
 a {
   white-space: nowrap;
 }
-a:hover {
-  color:rgb(219, 210, 86)
-}
 
 /* ------ */
 
@@ -66,6 +55,35 @@ a:hover {
 html, body {
   height: 100%;
   width: 100%;
+}
+
+body {
+  background-image: linear-gradient(#232369, black);
+}
+
+#edgeleft, #edgeright {
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  width: 20vw;
+  background-image: linear-gradient(to right, black, transparent);
+}
+
+#edgeright {
+  right: 0%;
+  background-image: linear-gradient(to left, black, transparent);
+}
+
+a:hover {
+  color:rgb(219, 210, 86)
+}
+
+/* text */
+
+.jim-nightshade-regular {
+  font-family: "Jim Nightshade", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* global variables */
@@ -114,6 +132,8 @@ html, body {
   align-items: center;
 }
 
+/* zoom in */
+
 #overlay {
   display: none;
   position: fixed; /* Stay in place */
@@ -156,10 +176,18 @@ html, body {
   top: var(--site-margin);
   left: 50%;
   transform: translate(-50%);
+  opacity: 80%;
+}
+
+#comictitle:hover {
+  opacity: 100%;
 }
 
 a img {
   vertical-align: bottom;
+}
+
+#comictitle img {
   height: var(--comic-title-height);
   width: auto;
 }
@@ -183,23 +211,51 @@ a img {
 #sitenavigation, #socials {
   text-align: center;
   height: 400px;
-  width:  116px;
-  border: solid 2px;
-  border-radius: 2px;
-  border-color:rgba(255, 255, 255, 0.116);
-  padding: 20px 8px;
-  line-height: 3;
+  width:  184px;
+  padding: 6px;
   margin-top: var(--sidebar-top-margin);
+
+  font-family: "Jim Nightshade", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 26px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 #sitenavigation {
   position: absolute;
-  left: 4vw;
+  left: 2vw;
 }
 
 #socials {
   position: absolute;
-  right: 4vw;
+  right: 2vw;
+}
+
+.sitelink {
+  height: 60px;
+  text-align: center;
+  line-height: 2;
+  font-size: 30px;
+  color: #d8d8d8;
+  opacity: 85%;
+  border: 5px solid black;
+
+  transition: opacity 0.3s;
+}
+
+.sitelink:hover {
+  opacity: 100%;
+  color: rgb(255, 240, 35);
+}
+
+#archivelink {
+  background: url("sjswebarchivelink");
+  background-position: center;
+  background-size: 135%;
 }
 /* 
 @media screen and (max-width: 1250px) {

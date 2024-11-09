@@ -10,7 +10,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <%# <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet"> %>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap&family=Almendra+SC&family=Bellefair&family=Caesar+Dressing&family=Eagle+Lake&family=Felipa&family=Geo:ital@0;1&family=Grenze+Gotisch:wght@100..900&family=IM+Fell+Double+Pica+SC&family=Jim+Nightshade&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
 
     <%= yield :stylesheet %> 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -19,12 +21,15 @@
   </head>
 
   <body>
+    <div id="edgeleft"></div>
+    <div id="edgeright"></div>
 
     <%= render "shared/comic_title" %>
 
     <%= render "shared/site_navigation" %>
 
     <%= render "shared/socials" %>
+    
     <div id="overlay">
       <img id="overlayimg">
     </div>
