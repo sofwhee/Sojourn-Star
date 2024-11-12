@@ -62,17 +62,19 @@ body {
   background-color: #000000;
 }
 
+/* side shadows */
+
 #edgeleft, #edgeright {
-  position: fixed;
+  /* position: fixed;
   z-index: -1;
   height: 100vh;
   width: 39vw;
-  background-image: linear-gradient(to right, rgb(8 8 8 / 58%), transparent);
+  background-image: linear-gradient(to right, rgb(8 8 8 / 58%), transparent); */
 }
 
 #edgeright {
-  right: 0%;
-  background-image: linear-gradient(to left, rgb(8 8 8 / 58%), transparent);
+  /* right: 0%;
+  background-image: linear-gradient(to left, rgb(8 8 8 / 58%), transparent); */
 }
 
 /* text */
@@ -324,64 +326,41 @@ a img {
 }
 
 
-@media screen and (max-width: 1200px) {
-
-}
-
-/* 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1240px) {
 
   #fullwrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: content-box;
-    padding-left: 0;
-    padding-right: 0;
+    top: 35vh;
+    width: 95vw;
   }
 
-  #chapterslist {
-    width: 90vw;
-    margin: 0;
-  }
-
-  .chaptergallery {
+  #sitebuttons {
+    position: relative;
     display: flex;
-    padding: 24px;
+    justify-content: center;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
     flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  #sitenavigation {
-    order: 5;
-  }
-  
-  #socials {
-    order: 6;
-    margin-top: 6px;
+    z-index: 3;
   }
 
   #sitenavigation, #socials {
+    position: static;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: none;
-    height: 100%;
-    gap: 6px;
-    padding: 0px;
-  }
-  
-  .linktext {
-    display: block;
-    width: 90vw;
-    height: auto;
-    background:#2b2b2b;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: center;
+    width: auto;
+    margin-top: 0;
+    flex-basis: 100%;
+    background-color: transparent;
+    gap: 10px;
   }
 
-  #logout {
-    position: static;
-    top: 125px;
-    left: 24px;
+  .sitelink {
+    box-shadow: 0px 0px 10px white;
+    flex-basis: 150px;
   }
-  
-} */
+
+}
