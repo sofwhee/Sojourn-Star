@@ -59,7 +59,7 @@ html, body {
 
 body {
   /* background-image: linear-gradient(#373759, black); */
-  background-color: #373759;
+  background-color: #000000;
 }
 
 #edgeleft, #edgeright {
@@ -108,11 +108,20 @@ body {
 
 /* content */
 
+#comictitle {
+  z-index: 1;
+}
+
 #planet {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+}
+
+#planet>img {
+  height: auto;
+  width: 473px;
 }
 
 #fullwrap {
