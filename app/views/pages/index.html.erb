@@ -1,5 +1,3 @@
-<%= stylesheet_link_tag "archive/archive" %>
-
 <div id="newbuttons">
   <%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %>
   <%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %>
@@ -7,14 +5,14 @@
 
 <% @chapters.sorted.each do |chapter| %>
 
-  <h1 class="chaptertitle caesar-dressing-regular"><%= chapter.name %></h1>
+  <h1 class="galleryitem caesar-dressing-regular"><%= chapter.name %></h1>
 
-  <div class="chaptergallery">
+  <div class="gallery">
 
     <% if admin_signed_in? %>
       <% chapter.pages.sorted.each do |page| %>
-        <div class="gallerypageinfo">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainers" %>
+        <div class="galleryitem">
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainer" %>
           <%= link_to page.page_number, page, class: "gallerypagenum" %>
           <% if page.draft? %>
             <p>'Draft'</p>
@@ -28,8 +26,8 @@
     <% else %>
       <% chapter.pages.sorted.each do |page| %>
         <% next if page.invalid? || page.draft? || page.scheduled? %>
-        <div class="gallerypageinfo">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainers" %>
+        <div class="galleryitem">
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainer" %>
           <%= link_to page.page_number, page, class: "gallerypagenum" %>
         </div>
       <% end %>
