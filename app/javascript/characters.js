@@ -3,7 +3,7 @@ function expandImage(modal, modalimg) {
   modalimg.src = this.src;
 }
 
-const chars = Array.from(document.getElementsByClassName("charinfo"))
+const chars = Array.from(document.getElementsByClassName("galleryimg"))
 const modal = document.getElementById("overlay")
 const modalimg = document.getElementById("overlayimg")
 
