@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   def index
     @chapters = Chapter.all
     @pages = admin_signed_in? ? Page.sorted : Page.published.sorted
+    @graphic = "sojourn_planet"
+    @heading = "Chapters"
+    
+    render layout: 'gallery'
   end
 
   def show

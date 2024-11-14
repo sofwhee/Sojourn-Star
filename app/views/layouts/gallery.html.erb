@@ -34,10 +34,14 @@
     
     <div id="fullwrap">
 
+      <div id="headinggraphic"><%= image_tag(@graphic, size: "150x150")%></div>
+
+      <h1 id="pageheading" class="caesar-dressing-regular"><%= @heading %></h1>
+
       <p id="notice"><%= notice %></p>
       <p id="alert"><%= alert %></p>
       
-      <%= yield %>
+      <div class="infocontainer"><%= yield %></div>
       
     </div>
   </body>

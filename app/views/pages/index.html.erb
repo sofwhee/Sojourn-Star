@@ -1,63 +1,41 @@
 <%= stylesheet_link_tag "archive/archive" %>
 
-<%= render "shared/site_navigation" %>
-
-<ol id="chapterslist">
-
-  <ul id="new">
-    <li><%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %></li>
-    <li><%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %></li>
-  </ul>
+<div id="newbuttons">
+  <%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %>
+  <%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %>
+</div>
 
 <% @chapters.sorted.each do |chapter| %>
-  <a class="chaptertitle" onclick=<%="slideToggle(#{chapter.name})"%>><%="#{chapter.name}"%></a>
-  
-  <div class="chaptergallerytoggle" id=<%="#{chapter.name}"%>>
 
-    <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "adminbutton"){} %>
+  <h1 class="chaptertitle caesar-dressing-regular"><%= chapter.name %></h1>
 
-    <ol class="chaptergallery">
-    <% chapter.pages.sorted.each do |page| %>
+  <div class="chaptergallery">
 
-      <% if admin_signed_in? %>
-
-        <li class="galleryitem">
-
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), size: "100x100"), page %>
-          <br>
-          
-          <%= link_to page.page_number, page %>
-          <br>
-
+    <% if admin_signed_in? %>
+      <% chapter.pages.sorted.each do |page| %>
+        <div class="gallerypageinfo">
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainers" %>
+          <%= link_to page.page_number, page, class: "gallerypagenum" %>
           <% if page.draft? %>
             <p>'Draft'</p>
-
           <% elsif page.scheduled? %>
             <p>'Scheduled'</p>
-            
           <% end %>
-          
-          <%= link_to "Edit", edit_page_path(page), class: "adminbutton" %>
-
-        </li>
-    
-      <% else %>
-
-        <% next if page.invalid? || page.draft? || page.scheduled? %>
-
-        <li class="galleryitem">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), size: "100x100"), page %>
-          <br>
-          <%= link_to page.page_number, page %>
-        </li>
-
+          <%= link_to "Edit", edit_page_path(page), class: "adminbutton editpagebutton" %>
+        </div>
       <% end %>
-      <% end %>    
-      </ol>
-    </div>
+
+    <% else %>
+      <% chapter.pages.sorted.each do |page| %>
+        <% next if page.invalid? || page.draft? || page.scheduled? %>
+        <div class="gallerypageinfo">
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainers" %>
+          <%= link_to page.page_number, page, class: "gallerypagenum" %>
+        </div>
+      <% end %>
+
+    <% end %> 
+
+  </div>
+  
 <% end %>
-</ol>
-
-<%= render "shared/socials"%>
-
-<%= javascript_include_tag "archive", defer: true %>
