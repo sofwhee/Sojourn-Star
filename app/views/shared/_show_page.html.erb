@@ -1,15 +1,25 @@
 <%= stylesheet_link_tag "pages/page" %>
 
-<%= render "shared/comic_title" %>
+<div id="leftflex">
+  <div id="comicflex"><%= render "shared/comic_title" %></div>
+
+  <div id="posteddate">
+    <li>Posted</li>
+    <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
+  </div>
+</div>
 
 <div id="cpage">
   <%= render "shared/page_image" %>
 </div>
 
-<%# <%= render "shared/posted_date" %>
-<%# <%= render "shared/page_and_chapter" %>
 <div id="rightflex">
   <%= render "shared/comic_navigation" %>
+
+  <div id="pageandchapter">
+    <div id="pagenum"><%= "Page #{@page.page_number}" %></div>
+    <div id="chapternum"><%= "Chapter #{@page.chapter.chapter_number}" %></div>
+  </div>
 </div>
 
 <% content_for :admin_options do %>

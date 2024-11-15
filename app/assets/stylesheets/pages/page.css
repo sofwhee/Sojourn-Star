@@ -67,6 +67,14 @@ body {
 
 /* text */
 
+.kalam-cursive-regular {
+  font-size: 18px;
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(165, 165, 165);
+}
+
 .jim-nightshade-regular {
   font-family: "Jim Nightshade", serif;
   font-weight: 400;
@@ -98,18 +106,22 @@ body {
 
 /* content */
 
-#comictitle {
+#leftflex {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#comictitle {
+  display: flex;
   justify-content: center;
-  align-items: flex-start;
+  object-fit: contain;
   opacity: 80%;
 }
 
 #comictitle>img {
-  flex-basis: 450px;
-  height: auto;
-  object-fit: contain;
 }
 
 #comictitle:hover {
@@ -122,6 +134,7 @@ body {
   box-sizing: border-box;
   justify-content: center;
   gap: 20px;
+  height: 100%;
 }
 
 #cpage {
@@ -130,7 +143,7 @@ body {
 }
 
 #cimage {
-  max-height: 95vh;
+  max-height: 96vh;
   width: 100%;
   object-fit: contain;
 }
@@ -149,7 +162,7 @@ body {
 
 .comicnav {
   opacity: 30%;
-  width: 80px;
+  width: 60px;
   height: auto;
 }
 
@@ -165,34 +178,26 @@ body {
   opacity: 100%;
 }
 
-#posteddate li, #pageandchapter li {
-  color:rgb(165, 165, 165);
+/* comic page info */
+
+#pageinfo {
+  font-size: 18px;
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(165, 165, 165);
+
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  transform: translate(-100px, -100px);
 }
 
 #posteddate {
-  bottom: 12px;
   text-align: right;
-  left: 0px;
-  transform: translatex(-116%)
 }
 
 #pageandchapter {
-  bottom: 12px;
-  right: 0px;
-  transform: translatex(116%)
-}
-
-#editfromshow {
-  right: var(--site-margin);
-  bottom: var(--site-margin);
-}
-
-#logout {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 125px;
-  left: 24px;
 }
 
 /* zoom in */
@@ -232,9 +237,20 @@ body {
   }
 }
 
-/* comic title */
-
 /* admin tools */
+
+#logout {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 125px;
+  left: 24px;
+}
+
+#editfromshow {
+  right: var(--site-margin);
+  bottom: var(--site-margin);
+}
 
 #logout {
   display: flex;
