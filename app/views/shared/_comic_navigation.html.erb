@@ -1,6 +1,6 @@
 <div id="comicnavigation">
-  <li><%= link_to_if(@page.first, image_tag("first.png", class: "comicnav", size: "60x60"),         @page.first, class: "navbutton"){} %></li>
-  <li><%= link_to_if(@page.previous, image_tag("previous.png", class: "comicnav", size: "60x60"),   @page.previous, class: "navbutton"){} %></li>
-  <li><%= link_to_if(@page.next, image_tag("next.png", class: "comicnav", size: "60x60"),           @page.next, class: "navbutton"){} %></li>
-  <li><%= link_to_if(@page.last, image_tag("latest.png", class: "comicnav", size: "60x60"),         @page.last, class: "navbutton"){} %></li>
+  <%= link_to_if(@page.first, image_tag("first.png", class: "comicnav", size: "60x60"),         @page.first, class: "navbutton") %>
+  <%= link_to_if(@page.previous, image_tag("previous.png", class: "comicnav", size: "60x60"),   @page.previous, class: "navbutton") %>
+  <%= link_to_if(@page.next, image_tag("next.png", class: "comicnav", size: "60x60"),           @page.next, class: "navbutton") %>
+  <%= link_to_if(@page.last, image_tag("latest.png", class: "comicnav", size: "60x60"),         @page.last, class: "navbutton") %>
 </div>

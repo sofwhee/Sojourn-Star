@@ -1,17 +1,17 @@
 <%= stylesheet_link_tag "pages/page" %>
 
+<%= render "shared/comic_title" %>
+
 <div id="cpage">
-
-  <%= render "shared/site_navigation" %>
   <%= render "shared/page_image" %>
-  <%= render "shared/posted_date" %>
-  <%= render "shared/page_and_chapter" %>
-  <%= render "shared/comic_navigation" %>
-
 </div>
 
-<%= render "shared/socials"%>
+<%# <%= render "shared/posted_date" %>
+<%# <%= render "shared/page_and_chapter" %>
+<div id="rightflex">
+  <%= render "shared/comic_navigation" %>
+</div>
 
 <% content_for :admin_options do %>
-  <%= render "shared/edit_button" %>
+  <%# <%= render "shared/edit_button" %>
 <% end %>
