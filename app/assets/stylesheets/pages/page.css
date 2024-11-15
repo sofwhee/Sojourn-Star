@@ -121,6 +121,7 @@ body {
   padding: 20px;
   box-sizing: border-box;
   justify-content: center;
+  gap: 20px;
 }
 
 #cpage {
@@ -136,17 +137,24 @@ body {
 
 #rightflex {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #comicnavigation {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .comicnav {
   opacity: 30%;
   width: 80px;
   height: auto;
+}
+
+.navbutton {
+  width: fit-content;
 }
 
 .navbutton>.comicnav {
