@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "layouts/gallery" %>
+
 <div id="newbuttons">
   <%= link_to_if(admin_signed_in?, "New chapter", new_chapter_path, class: "adminbutton"){} %>
   <%= link_to_if(admin_signed_in?, "New page", new_page_path, class: "adminbutton"){} %>

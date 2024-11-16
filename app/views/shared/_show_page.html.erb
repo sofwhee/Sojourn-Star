@@ -4,8 +4,8 @@
   <div id="comicflex"><%= render "shared/comic_title" %></div>
 
   <div id="posteddate">
-    <li>Posted</li>
-    <li><%= @page.published_at.strftime("%d/%m/%Y") %></li>
+    <p>Posted</p>
+    <p><%= @page.published_at.strftime("%d/%m/%Y") %></p>
   </div>
 </div>
 
@@ -14,6 +14,8 @@
 </div>
 
 <div id="rightflex">
+  <div id="emptytocenternavigation"></div>
+
   <%= render "shared/comic_navigation" %>
 
   <div id="pageandchapter">

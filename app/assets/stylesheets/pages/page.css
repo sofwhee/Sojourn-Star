@@ -21,7 +21,6 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
   text-decoration: none;
-  color: rgb(255, 255, 255);
   list-style: none;
 }
 /* HTML5 display-role reset for older browsers */
@@ -68,7 +67,7 @@ body {
 /* text */
 
 .kalam-cursive-regular {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Kalam", cursive;
   font-weight: 400;
   font-style: normal;
@@ -122,10 +121,17 @@ body {
 }
 
 #comictitle>img {
+  height: auto;
+  width: 324px;
 }
 
 #comictitle:hover {
   opacity: 100%;
+}
+
+#posteddate {
+  text-align: right;
+  align-self: flex-end;
 }
 
 #fullwrap {
@@ -151,7 +157,9 @@ body {
 #rightflex {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #comicnavigation {
@@ -180,24 +188,12 @@ body {
 
 /* comic page info */
 
-#pageinfo {
-  font-size: 18px;
+#posteddate, #pageandchapter {
+  font-size: 16px;
   font-family: "Kalam", cursive;
   font-weight: 400;
   font-style: normal;
   color: rgb(165, 165, 165);
-
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  transform: translate(-100px, -100px);
-}
-
-#posteddate {
-  text-align: right;
-}
-
-#pageandchapter {
 }
 
 /* zoom in */
