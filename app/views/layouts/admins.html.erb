@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sojourn Star</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= favicon_link_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <%# <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet"> %>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap&family=Almendra+SC&family=Bellefair&family=Caesar+Dressing&family=Eagle+Lake&family=Felipa&family=Geo:ital@0;1&family=Grenze+Gotisch:wght@100..900&family=IM+Fell+Double+Pica+SC&family=Jim+Nightshade&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+
+    <%= yield :stylesheet %> 
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application'%>
+  </head>
+
+  <body>
+    <%= render "shared/comic_title" %>
+
+    <div id="sitebuttons">
+    <%= render "shared/site_navigation" %>
+    <%= render "shared/socials" %>
+    </div>
+    
+    <div id="fullwrap">
+
+      <h1 id="pageheading" class="caesar-dressing-regular"><%= @heading %></h1>
+
+      <p id="notice"><%= notice %></p>
+      <p id="alert"><%= alert %></p>
+      
+      <div class="infocontainer"><%= yield %></div>
+      
+    </div>
+  </body>
+
+</html>
