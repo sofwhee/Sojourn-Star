@@ -64,6 +64,19 @@ body {
   background-color: #000000;
 }
 
+/* admin */
+
+#notice, #alert {
+  position: absolute;
+  top: 160px;
+  right: 50px;
+  color: white;
+}
+
+#alert {
+  top: 120px;
+}
+
 /* text */
 
 .kalam-cursive-regular {

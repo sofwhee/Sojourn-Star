@@ -95,20 +95,34 @@ body {
   --comic-title-height: 150px;
 }
 
+/* Form */
+
+form {
+  text-align: center;
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+form>a:hover {
+  color: rgb(255, 222, 78);
+}
+
+input[type="submit"] {
+  margin-top: 12px;
+  padding: 1px 46px;
+  padding-bottom: 5px;
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 24px;
+  color: #ffd044;
+  background-color: #1f1f8b;
+}
+
 /* Content */
-
-#headinggraphic {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  z-index: -1;
-}
-
-#headinggraphic>img {
-  height: auto;
-  width: 473px;
-}
 
 #fullwrap {
   position: relative;

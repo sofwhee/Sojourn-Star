@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :chapters
-  
-  devise_for :admins, skip: :registrations, controllers: { registrations: "registrations" }
+
+  devise_for :admins, skip: :registrations, controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
+
   
   as :admin do
     get 'admins/edit', to: 'devise/registrations#edit', as: 'edit_admin_registration'
