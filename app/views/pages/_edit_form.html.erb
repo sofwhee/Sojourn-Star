@@ -1,31 +1,31 @@
 <%= form_with model: page do |form| %>
-  <div>
-    <%= form.label :page_image %><br>
-    <%= form.file_field :page_image, direct_upload: true %><br>
-    <% page.errors.full_messages_for(:page_image).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+
+  <%= form.label :page_image %>
+  <%= form.file_field :page_image, direct_upload: true %>
+  <% page.errors.full_messages_for(:page_image).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+
+
+  <%= form.label :chapter_id %>
+  <%= form.select :chapter_id, @chapter_options %>
+  <% page.errors.full_messages_for(:chapter_id).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+
+
+  <%= form.label :page_number %>
+  <%= form.text_area :page_number %>
+  <% page.errors.full_messages_for(:page_number).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
 
   <div>
-    <%= form.label :chapter_id %>
-    <%= form.select :chapter_id, @chapter_options %>
-    <% page.errors.full_messages_for(:chapter_id).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.label :page_number %>
-    <%= form.text_area :page_number %>
-    <% page.errors.full_messages_for(:page_number).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %><br>
-    <%= form.submit "Publish" %><br>
+    <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %>
+    <%= form.submit "Publish" %>
     <%= form.submit "Draft" %>
   </div>
 <% end %>

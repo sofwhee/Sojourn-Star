@@ -124,6 +124,7 @@ input[type="submit"] {
 
 label {
   font-size: 24px;
+  margin-left: 12px;
 }
 
 textarea#page_page_number {
