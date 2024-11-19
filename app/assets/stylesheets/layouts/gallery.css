@@ -279,14 +279,14 @@ body {
   background-color: #4343c9;
 }
 
-.editpagebutton {
+.editbutton {
   margin-top: 0px;
   padding: 0px 0px;
   padding-bottom: 4px;
   font-size: 14px;
 }
 
-.editpagebutton:hover {
+.editbutton:hover {
   margin-top: 0px;
   padding: 0px 0px;
   padding-bottom: 4px;

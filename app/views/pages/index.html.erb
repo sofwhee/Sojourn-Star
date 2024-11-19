@@ -7,7 +7,8 @@
 
 <% @chapters.sorted.each do |chapter| %>
 
-  <h1 class="gallerytitle caesar-dressing-regular"><%= chapter.name %></h1>
+  <h1 class="gallerytitle caesar-dressing-regular"><%= chapter.name %>
+  <%= link_to_if(admin_signed_in?, "Edit", edit_chapter_path(chapter), class: "adminbutton editbutton"){} %></h1>
 
   <div class="gallery">
 
@@ -21,7 +22,7 @@
           <% elsif page.scheduled? %>
             <p>'Scheduled'</p>
           <% end %>
-          <%= link_to "Edit", edit_page_path(page), class: "adminbutton editpagebutton" %>
+          <%= link_to "Edit", edit_page_path(page), class: "adminbutton editbutton" %>
         </div>
       <% end %>
 

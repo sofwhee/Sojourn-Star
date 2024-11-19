@@ -6,22 +6,17 @@
     <div><%= message %></div>
   <% end %>
 
-
-
   <%= form.label :chapter_id %>
   <%= form.select :chapter_id, @chapter_options %>
   <% page.errors.full_messages_for(:chapter_id).each do |message| %>
     <div><%= message %></div>
   <% end %>
 
-
-
   <%= form.label :page_number %>
   <%= form.text_area :page_number %>
   <% page.errors.full_messages_for(:page_number).each do |message| %>
     <div><%= message %></div>
   <% end %>
-
 
   <div>
     <%= form.datetime_select :published_at, use_short_month: true, discard_hour: true, discard_minute: true, discard_second: true, default: Time.current %>
