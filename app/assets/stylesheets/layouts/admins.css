@@ -97,7 +97,7 @@ body {
 
 /* Form */
 
-form {
+.infocontainer {
   text-align: center;
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
@@ -105,21 +105,74 @@ form {
   font-style: normal;
 }
 
-form>a:hover {
+a:hover {
   color: rgb(255, 222, 78);
 }
 
 input[type="submit"] {
   margin-top: 12px;
-  padding: 1px 46px;
+  padding: 0px 8px;
   padding-bottom: 5px;
   font-family: "Texturina", serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
-  font-size: 24px;
+  font-size: 14px;
   color: #ffd044;
   background-color: #1f1f8b;
+}
+
+label {
+  font-size: 24px;
+}
+
+textarea#page_page_number {
+  width: 4rem;
+  height: 1rem;
+  position: relative;
+  top: 3px;
+  text-align: center;
+}
+
+.adminbutton {
+  margin-top: 12px;
+  padding: 0px 8px;
+  padding-bottom: 5px;
+  font-family: "Texturina", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  color: #ffd044;
+  background-color: #b30000;
+
+  appearance: auto;
+  user-select: none;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  box-sizing: border-box;
+  white-space: pre;
+  padding-block: 1px;
+  padding-inline: 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+}
+
+.editpagebutton {
+  margin-top: 0px;
+  padding: 0px 0px;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+
+.editpagebutton:hover {
+  margin-top: 0px;
+  padding: 0px 0px;
+  padding-bottom: 4px;
+  font-size: 14px;
 }
 
 /* Content */

@@ -8,7 +8,7 @@
   </div>
 
   <div>
-    <%= form.label :chapter_id %><br>
+    <%= form.label :chapter_id %>
     <%= form.select :chapter_id, @chapter_options, selected: Chapter.last.id %>
     <% page.errors.full_messages_for(:chapter_id).each do |message| %>
       <div><%= message %></div>
@@ -16,7 +16,7 @@
   </div>
 
   <div>
-    <%= form.label :page_number %><br>
+    <%= form.label :page_number %>
     <%= form.text_area :page_number, value: (@page.last.page_number.to_i + 1).to_s %><br>
     <% page.errors.full_messages_for(:page_number).each do |message| %>
       <div><%= message %></div>

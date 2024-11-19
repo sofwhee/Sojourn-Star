@@ -17,6 +17,9 @@ class PagesController < ApplicationController
   def new
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @page = Page.new
+    @heading = "New Page"
+
+    render layout: 'devise'
   end
 
   def create
@@ -38,6 +41,9 @@ class PagesController < ApplicationController
   
   def edit
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
+    @heading = "Edit Page"
+
+    render layout: 'devise'
   end
 
   def update
