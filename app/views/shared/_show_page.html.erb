@@ -3,6 +3,11 @@
 <div id="leftflex">
   <div id="comicflex"><%= render "shared/comic_title" %></div>
 
+  <div id="sitebuttons">
+    <%= render "shared/site_navigation" %>
+    <%= render "shared/socials" %>
+  </div>
+
   <div id="posteddate">
     <p>Posted</p>
     <p><%= @page.published_at.strftime("%d/%m/%Y") %></p>

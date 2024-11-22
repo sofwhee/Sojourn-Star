@@ -261,14 +261,6 @@ body {
   bottom: var(--site-margin);
 }
 
-#logout {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 125px;
-  left: 24px;
-}
-
 /* sidebars */
 
 :root {
@@ -276,46 +268,34 @@ body {
 }
 
 #sitenavigation, #socials {
-  text-align: center;
-  width:  184px;
   padding: 6px;
-  margin-top: var(--sidebar-top-margin);
-
-  display: flex;
-  flex-direction: column;
-
   background-color: rgb(13 11 26);
   border-radius: 4px;
 }
 
 #sitenavigation {
-  position: absolute;
-  left: 0vw;
-  padding-left: 2vw;
-}
-
-#socials {
-  position: absolute;
-  right: 0vw;
-  padding-right: 2vw;
+  margin-bottom: 12px;
 }
 
 .sitelink {
-  height: 60px;
-  text-align: center;
-  line-height: 2;
-  font-size: 30px;
-  color: #d8d8d8;
-  opacity: 50%;
-  border: 5px solid black;
-  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  transition: opacity 0.3s;
-  text-shadow: #000000 1px 0 10px;
+  height: 56px;
+  width: 187px;
 
   font-family: "Caesar Dressing", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 26px;
+  
+  color: #d8d8d8;
+  text-shadow: #000000 1px 0 10px;
+  opacity: 50%;
+  border: 5px solid black;
+  border-radius: 8px;
+  transition: opacity 0.3s;
 }
 
 .sitelink:hover {
@@ -339,4 +319,150 @@ body {
   background: url("twitterlink");
   background-position: center;
   background-size: 83%;
+}
+
+@media screen and (max-width: 1320px) {
+  #comictitle>img {
+    height: auto;
+    width: 162px;
+  }
+
+  .sitelink {
+    height: 38px;
+    width: 150px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+
+  #fullwrap {
+    display: flex;
+    flex-direction: Column;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+    margin: 0;
+  }
+
+  #cpage {
+    order: 1;
+  }
+
+  #cimage {
+    max-height: unset;
+    height: auto;
+    width: 100%;
+  }
+  
+  #rightflex {
+    flex-direction: row;
+    justify-content: center;
+    order: 2;
+  }
+
+  div#emptytocenternavigation {
+    display: none;
+  }
+
+  #comicnavigation {
+    flex-direction: row;
+    gap: 8vw;
+  }
+  
+  .comicnav {
+    opacity: 30%;
+    width: 13vw;
+    height: auto;
+  }
+  
+  .navbutton {
+    width: fit-content;
+  }
+
+  #posteddate, #pageandchapter {
+    display: none;
+    /* font-size: 16px; */
+    /* font-family: "Kalam", cursive; */
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    /* /* color: rgb(165, 165, 165); */
+  }
+
+  #posteddate {
+    text-align: right;
+    align-self: flex-end;
+  }
+
+  #leftflex {
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    order: 3;
+    gap: 12px;
+  }
+
+  #comictitle {
+    display: flex;
+    justify-content: center;
+    object-fit: contain;
+    opacity: 80%;
+  }
+    
+  #comictitle>img {
+    width: 50vw;
+    margin: 30px;
+  }
+
+  #sitebuttons {
+    margin: 0;
+    width: 100%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+  }
+
+  #sitenavigation, #socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    gap: 14px;
+  }
+
+  #socials {
+    flex-direction: row;
+  }
+
+  #socials > * {
+    font-size: 5vw;
+  }
+
+  .sitelink {
+    height: 9vh;
+    width: 54vw;
+    font-size: xx-large;
+    border: 5px solid orange;
+  }
+
+  #logout {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 125px;
+    left: 24px;
+  }
+  
+  #editfromshow {
+    right: var(--site-margin);
+    bottom: var(--site-margin);
+  }
+
 }
