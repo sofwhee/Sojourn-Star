@@ -399,7 +399,24 @@ body {
   }
 
   .sitelink {
-    box-shadow: 0px 0px 10px white;
-    flex-basis: 150px;
+    flex-basis: 250px;
+    height: 92px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    border: 4.5px solid orange;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .sitelink {
+    flex-basis: 26vw;
+    height: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vw;
+    border: 0.5vw solid orange;
   }
 }
