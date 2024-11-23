@@ -1,7 +1,7 @@
-class CharactersController < ApplicationController
+class LoresController < ApplicationController
   def index
     @graphic = "sojourn_planet"
-    @heading = "Characters"
+    @heading = "Lore"
 
     render layout: 'gallery'
   end
