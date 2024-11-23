@@ -13,4 +13,22 @@
  *= require_self
  */
 
- 
+#logout {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: #2e469f;
+  border-radius: 5px;
+  padding: 10px;
+
+  font-family: "Caesar Dressing", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+
+  color:white;
+}
+
+#logout:hover {
+  color: rgb(255, 222, 78);
+}

@@ -21,6 +21,8 @@
   </head>
 
   <body>
+    <%= link_to_if(admin_signed_in?, "Sign out", destroy_admin_session_path, data: { turbo_method: :delete }, class: "adminbutton", id: "logout"){} %>
+    
     <%= render "shared/comic_title" %>
 
     <div id="sitebuttons">

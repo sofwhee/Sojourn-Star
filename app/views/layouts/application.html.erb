@@ -20,6 +20,7 @@
   </head>
 
   <body>
+    <%= link_to_if(admin_signed_in?, "Sign out", destroy_admin_session_path, data: { turbo_method: :delete }, class: "adminbutton", id: "logout"){} %>
 
     <p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>

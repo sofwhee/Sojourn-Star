@@ -245,14 +245,6 @@ body {
 
 /* admin tools */
 
-#logout {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 125px;
-  left: 24px;
-}
-
 .adminbutton {
   margin-top: 12px;
   padding: 1px 46px;
@@ -413,9 +405,6 @@ body {
   .sitelink {
     flex-basis: 26vw;
     height: 9vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 4vw;
     border: 0.5vw solid orange;
   }
