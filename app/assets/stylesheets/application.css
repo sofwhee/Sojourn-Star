@@ -32,3 +32,35 @@
 #logout:hover {
   color: rgb(255, 222, 78);
 }
+
+#archivelink {
+  background: url("archivelink");
+  background-position: center;
+  background-size: 135%;
+}
+
+#lorelink {
+  background: url("lorelink");
+  background-position: center;
+  background-size: 135%;
+}
+
+#patreon {
+  background: url("patreonlink");
+  background-position: center;
+  background-size: 135%;
+}
+
+#bluesky {
+  background: url("blueskylink");
+  background-position: center;
+  background-size: 83%;
+}
+
+#webtoons {
+  background: url("webtoonslink");
+  background-position: center;
+  background-size: 70%;
+}
+
+

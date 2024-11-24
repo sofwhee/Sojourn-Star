@@ -339,25 +339,6 @@ body {
   color: rgb(255, 222, 78);
 }
 
-#archivelink {
-  background: url("sjswebarchivelink");
-  background-position: center;
-  background-size: 135%;
-}
-
-#patreon {
-  background: url("patreonweblink");
-  background-position: center;
-  background-size: 135%;
-}
-
-#twitter {
-  background: url("twitterlink");
-  background-position: center;
-  background-size: 83%;
-}
-
-
 @media screen and (max-width: 1240px) {
 
   #fullwrap {
