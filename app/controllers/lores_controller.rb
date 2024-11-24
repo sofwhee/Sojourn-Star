@@ -1,6 +1,6 @@
 class LoresController < ApplicationController
   def index
-    @graphic = "sojourn_planet"
+    @graphic = "loreheaderbg2"
     @heading = "Lore"
 
     render layout: 'gallery'
