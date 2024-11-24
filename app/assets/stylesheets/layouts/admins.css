@@ -73,7 +73,7 @@ body {
 }
 
 .caesar-dressing-regular {
-  font-family: "Caesar Dressing", serif;
+
   font-weight: 400;
   font-style: normal;
 }
@@ -348,7 +348,7 @@ textarea#page_page_number {
   transition: opacity 0.3s;
   text-shadow: #000000 1px 0 10px;
 
-  font-family: "Caesar Dressing", serif;
+
   font-weight: 400;
   font-style: normal;
 }

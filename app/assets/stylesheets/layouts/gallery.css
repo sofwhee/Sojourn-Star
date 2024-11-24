@@ -73,7 +73,7 @@ body {
 }
 
 .caesar-dressing-regular {
-  font-family: "Caesar Dressing", serif;
+
   font-weight: 400;
   font-style: normal;
 }
@@ -151,6 +151,10 @@ body {
   padding: 0px 22px;
   box-sizing: border-box;
   gap: 14px;
+}
+
+.gallerytitle {
+  font-family: "Kalam";
 }
 
 .gallerytitle, .galleryitem {
@@ -329,7 +333,7 @@ body {
   transition: opacity 0.3s;
   text-shadow: #000000 1px 0 10px;
 
-  font-family: "Caesar Dressing", serif;
+
   font-weight: 400;
   font-style: normal;
 }

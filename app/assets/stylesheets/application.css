@@ -21,7 +21,7 @@
   border-radius: 5px;
   padding: 10px;
 
-  font-family: "Caesar Dressing", serif;
+
   font-weight: 400;
   font-style: normal;
   font-size: 26px;
@@ -31,6 +31,10 @@
 
 #logout:hover {
   color: rgb(255, 222, 78);
+}
+
+.sitelink {
+  font-family: "Kalam";
 }
 
 #archivelink {
