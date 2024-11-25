@@ -389,6 +389,14 @@ body {
 }
 
 @media screen and (max-width: 930px) {
+  #sitebuttons {
+    top: 2vh;
+  }
+
+  #fullwrap {
+    top: 7vh;
+  }
+
   .sitelink {
     flex-basis: 26vw;
     height: 9vw;
@@ -405,8 +413,9 @@ body {
   }
 
   #comictitle img {
-    height: revert-layer;
-    width: auto;
+    height: auto;
+    width: 80vw;
+    margin-top: 3vw;
   }
 
   #headinggraphic>img {
