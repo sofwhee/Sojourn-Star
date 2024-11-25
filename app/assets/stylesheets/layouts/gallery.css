@@ -152,6 +152,7 @@ body {
   padding: 0px 22px;
   box-sizing: border-box;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 .gallerytitle {
