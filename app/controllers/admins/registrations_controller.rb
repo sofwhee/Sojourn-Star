@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+class Admins::RegistrationsController < Devise::RegistrationsController
 
   before_action :one_admin_registered?, only: [:new, :create]
   
