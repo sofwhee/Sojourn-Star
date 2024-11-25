@@ -1,8 +1,5 @@
-11/14 goals
+11/24 goals
 
-  archive:
-Center fullwrap
-give fullwrap a background
-style it as lores page essentially
-change graphic in archive
-change font from greek to something else
+make page uploaded and page num + chapter visible in mobile view
+make chapters collapsible
+link images repeat on mobile (bluesky and webtoons)

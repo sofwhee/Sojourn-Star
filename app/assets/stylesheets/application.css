@@ -67,4 +67,8 @@
   background-size: 70%;
 }
 
-
+@media screen and (max-width: 930px) {
+  #patreon, #bluesky, #webtoons {
+    background-size: cover;
+  }
+}
