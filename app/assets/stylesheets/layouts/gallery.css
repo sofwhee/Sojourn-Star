@@ -359,7 +359,7 @@ body {
     left: 50%;
     transform: translate(-50%);
     flex-wrap: wrap;
-    z-index: 3;
+    z-index: 1;
   }
 
   #sitenavigation, #socials {
@@ -393,5 +393,41 @@ body {
     height: 9vw;
     font-size: 4vw;
     border: 0.5vw solid orange;
+  }
+
+  #comictitle {
+    position: static;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    opacity: 80%;
+  }
+
+  #comictitle img {
+    height: revert-layer;
+    width: auto;
+  }
+
+  #headinggraphic>img {
+    height: auto;
+    width: 90vw;
+  }
+
+  #overlayimg {
+    height: initial;
+    top: 15vh;
+    left: unset;
+    transform: none;
+  }
+
+  @keyframes reveal {
+    from {
+      transform: scale(0.7);
+      opacity: 0%;
+    }
+    to {
+      transform: scale(1);
+      opacity: 100%;
+    }
   }
 }
