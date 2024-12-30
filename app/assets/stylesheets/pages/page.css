@@ -130,7 +130,7 @@ body {
   display: flex;
   justify-content: center;
   object-fit: contain;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 #comictitle>img {
@@ -139,7 +139,7 @@ body {
 }
 
 #comictitle:hover {
-  opacity: 100%;
+  opacity: 1.0;
 }
 
 #posteddate {
@@ -182,7 +182,7 @@ body {
 }
 
 .comicnav {
-  opacity: 30%;
+  opacity: 0.3;
   width: 60px;
   height: auto;
 }
@@ -192,11 +192,11 @@ body {
 }
 
 .navbutton>.comicnav {
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .navbutton>.comicnav:hover {
-  opacity: 100%;
+  opacity: 1.0;
 }
 
 /* comic page info */
@@ -238,11 +238,11 @@ body {
 @keyframes reveal {
   from {
     height: 80vh;
-    opacity: 0%;
+    opacity: 0.0;
   }
   to {
     height: 96vh;
-    opacity: 100%;
+    opacity: 1.0;
   }
 }
 
@@ -284,14 +284,14 @@ body {
   
   color: #d8d8d8;
   text-shadow: #000000 1px 0 10px;
-  opacity: 50%;
+  opacity: 0.5;
   border: 5px solid black;
   border-radius: 8px;
   transition: opacity 0.3s;
 }
 
 .sitelink:hover {
-  opacity: 100%;
+  opacity: 1.0;
   color: rgb(255, 222, 78);
 }
 
@@ -347,7 +347,7 @@ body {
   }
   
   .comicnav {
-    opacity: 30%;
+    opacity: 0.3;
     width: 13vw;
     height: auto;
   }
@@ -384,7 +384,7 @@ body {
     display: flex;
     justify-content: center;
     object-fit: contain;
-    opacity: 80%;
+    opacity: 0.8;
   }
     
   #comictitle>img {

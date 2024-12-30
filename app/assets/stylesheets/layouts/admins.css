@@ -235,14 +235,14 @@ textarea#page_page_number {
   position: relative;
   height: 100%;
   max-width: 100%;
-  opacity: 50%;
+  opacity: 0.5;
   left: 0%;
 
   transition: opacity 0.3s;
 }
 
 .galleryimg:hover {
-  opacity: 100%;
+  opacity: 1.0;
 }
 
 /* Zoom in */
@@ -274,11 +274,11 @@ textarea#page_page_number {
 @keyframes reveal {
   from {
     height: 80vh;
-    opacity: 0%;
+    opacity: 0.0;
   }
   to {
     height: 96vh;
-    opacity: 100%;
+    opacity: 1.0;
   }
 }
 
@@ -289,12 +289,12 @@ textarea#page_page_number {
   top: var(--site-margin);
   left: 50%;
   transform: translate(-50%);
-  opacity: 80%;
+  opacity: 0.8;
   z-index: 1;
 }
 
 #comictitle:hover {
-  opacity: 100%;
+  opacity: 1.0;
 }
 
 #comictitle img {
@@ -341,7 +341,7 @@ textarea#page_page_number {
   line-height: 2;
   font-size: 30px;
   color: #d8d8d8;
-  opacity: 50%;
+  opacity: 0.5;
   border: 5px solid black;
   border-radius: 8px;
 
@@ -354,7 +354,7 @@ textarea#page_page_number {
 }
 
 .sitelink:hover {
-  opacity: 100%;
+  opacity: 1.0;
   color: rgb(255, 222, 78);
 }
 
