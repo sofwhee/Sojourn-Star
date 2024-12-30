@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
+
   before_action :require_login, except: [:index, :show]
   before_action :set_page, except: [:index, :new, :create]
 
   def index
+    @page_title = 'Archive'
     @chapters = Chapter.all
     @pages = admin_signed_in? ? Page.sorted : Page.published.sorted
     @graphic = "sojourn_planet.png"
@@ -12,9 +14,11 @@ class PagesController < ApplicationController
   end
 
   def show
+    @page_title = "Sojourn Star Page #{@page.page_number}"
   end
 
   def new
+    @page_title = `New Page`
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @page = Page.new
     @heading = "New Page"
@@ -23,6 +27,7 @@ class PagesController < ApplicationController
   end
 
   def create
+    @page_title = 'Sojourn Star'
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
 
     if params[:commit] == "Draft"
@@ -40,6 +45,7 @@ class PagesController < ApplicationController
   end
   
   def edit
+    @page_title = "Edit Page #{@page.page_number}"
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
     @heading = "Edit Page"
 
@@ -47,6 +53,7 @@ class PagesController < ApplicationController
   end
 
   def update
+    @page_title = 'Sojourn Star'
     @chapter_options = Chapter.all.map{ |c| [ c.name, c.id ] }
 
     @page.slug = nil if @page.page_number != params[:page_number]

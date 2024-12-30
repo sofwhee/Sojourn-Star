@@ -2,6 +2,7 @@ class ChaptersController < ApplicationController
   before_action :require_login, except: [:index, :show]
   before_action :set_chapter, only: %i[ show edit update destroy ]
   layout 'devise'
+  @page_title = 'Sojourn Star'
 
   # GET /chapters or /chapters.json
   def index
@@ -14,12 +15,14 @@ class ChaptersController < ApplicationController
 
   # GET /chapters/new
   def new
+    @page_title = 'New Chapter'
     @chapter = Chapter.new
     @heading = "New Chapter"
   end
 
   # GET /chapters/1/edit
   def edit
+    @page_title = 'Edit Chapter'
     @heading = "Edit Chapter"
   end
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,8 +54,6 @@ a img {
 }
 
 /* ------ */
-
-@import url('https://fonts.googleapis.com/css2?family=Copse&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap');
 
 html, body {
   height: 100%;

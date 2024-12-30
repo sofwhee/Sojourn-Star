@@ -1,6 +1,6 @@
 <div id="comicnavigation">
-  <%= link_to_if(@page.first, image_tag("first.png", class: "comicnav", size: "60x60"),         @page.first, class: "navbutton") %>
-  <%= link_to_if(@page.previous, image_tag("previous.png", class: "comicnav", size: "60x60"),   @page.previous, class: "navbutton") %>
-  <%= link_to_if(@page.next, image_tag("next.png", class: "comicnav", size: "60x60"),           @page.next, class: "navbutton") %>
-  <%= link_to_if(@page.last, image_tag("latest.png", class: "comicnav", size: "60x60"),         @page.last, class: "navbutton") %>
+  <%= link_to_if(@page.first, image_tag("first.png", class: "comicnav", size: "60x60", alt: "An arrow pointing left with a line next to it. It directs you to the first comic page."),         @page.first, class: "navbutton") %>
+  <%= link_to_if(@page.previous, image_tag("previous.png", class: "comicnav", size: "60x60", alt: "An arrow pointing left. It directs you to the previous comic page."),   @page.previous, class: "navbutton") %>
+  <%= link_to_if(@page.next, image_tag("next.png", class: "comicnav", size: "60x60", alt: "An arrow pointing right. It directs you to the next comic page."),           @page.next, class: "navbutton") %>
+  <%= link_to_if(@page.last, image_tag("latest.png", class: "comicnav", size: "60x60", alt: "An arrow pointing right with a line left of it. It directs you to the most recent comic page."),         @page.last, class: "navbutton") %>
 </div>

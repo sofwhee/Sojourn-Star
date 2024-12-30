@@ -15,7 +15,7 @@
     <% if admin_signed_in? %>
       <% chapter.pages.sorted.each do |page| %>
         <div class="galleryitem">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainer" %>
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100", alt: "A sized down representation of a comic page."), page, class: "galleryimgcontainer" %>
           <%= link_to page.page_number, page, class: "gallerypagenum" %>
           <% if page.draft? %>
             <p>'Draft'</p>
@@ -30,7 +30,7 @@
       <% chapter.pages.sorted.each do |page| %>
         <% next if page.invalid? || page.draft? || page.scheduled? %>
         <div class="galleryitem">
-          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100"), page, class: "galleryimgcontainer" %>
+          <%= link_to image_tag(page.page_image.representation(resize_to_limit: [100, 100]), class: "galleryimg", size: "100x100", alt: "A sized down representation of a comic page."), page, class: "galleryimgcontainer" %>
           <%= link_to page.page_number, page, class: "gallerypagenum" %>
         </div>
       <% end %>

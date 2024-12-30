@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  @page_title = 'Sojourn Star'
   before_action :one_admin_registered?, only: [:new, :create]
   
   protected
